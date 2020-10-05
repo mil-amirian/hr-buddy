@@ -34,3 +34,12 @@ main {
     height: 75px;
     background-color: #F2F2F2;
 }
+
+.view {
+    background-color: #70a2ed;
+    border: none;
+}
+
+.table-headers {
+    background-color: #6c6c6c;
+}
