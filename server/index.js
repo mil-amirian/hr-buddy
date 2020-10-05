@@ -46,6 +46,24 @@ app.get('/api/employees', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/employees/:employeeId', (req, res, next) => {
+  const sql = `
+    select *
+      from "employees"
+      where "employeeId" = $1
+  `;
+  const value = [parseInt(req.params.employeeId, 10)];
+  db.query(sql, value)
+    .then(result => {
+      if (result.rows[0]) {
+        res.json(result.rows[0]);
+      } else {
+        next(new ClientError(`employee ${value} does not exist`, 404));
+      }
+    })
+    .catch(err => next(err));
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
