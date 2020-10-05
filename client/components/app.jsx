@@ -6,7 +6,11 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       message: null,
-      isLoading: true
+      isLoading: true,
+      currentUser: {
+        firstName: null,
+        lastName: null
+      }
     };
   }
 
