@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import LogIn from './view-log-in';
 import GetEmployees from './view-employees';
 
 export default class App extends React.Component {

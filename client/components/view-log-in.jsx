@@ -1,0 +1,61 @@
+import React from 'react';
+
+class LogIn extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      employees: [
+        {
+          firstName: null,
+          lastName: null
+        }
+      ]
+    };
+    this.getEmployees = this.getEmployees.bind(this);
+  }
+
+  componentDidMount() {
+    this.getEmployees();
+  }
+
+  getEmployees() {
+    fetch('/api/employees')
+      .then(res => res.json())
+      .then(employees => {
+        this.setState(state => ({
+          employees: employees
+        }));
+      });
+  }
+
+  render() {
+    return (
+      <>
+        <div className="spacer"></div>
+        <div className="d-flex justify-content-center align-items-center flex-column">
+          <div className="row">
+            <img className="d-flex justify-content-lg-center align-items-center" src="./images/hr-buddy-logo.png"></img>
+          </div>
+          <div className="row d-flex flex-column justify-content-center mt-4">
+            <h2>Login to your account</h2>
+            <div className="input-group mt-4">
+              <div className="input-group-prepend">
+                <label className="input-group-text" htmlFor="employee-select">Select User</label>
+              </div>
+              <select className="custom-select" id="employee-select">
+                {this.state.employees.map(employee => {
+                  return (
+                    <option key={employee.firstName} setView={this.props.setView}>{employee.firstName} {employee.lastName}</option>
+                  );
+                })
+                }
+              </select>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+
+export default LogIn;
