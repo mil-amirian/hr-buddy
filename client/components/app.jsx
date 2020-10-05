@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import GetEmployees from './view-employees';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -34,7 +35,10 @@ export default class App extends React.Component {
     switch (this.state.view) {
       case 'log-in':
         return (
-          <Header user="Sample User" logout={this.setView}/>
+          <>
+            <Header user="Sample User" logout={this.setView} />
+            <GetEmployees />
+          </>
         );
     }
   }
