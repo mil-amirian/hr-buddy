@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import LogIn from './view-log-in';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -24,7 +25,10 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Header user="Sample User"/>
+      <div>
+        <Header user="Sample User" />
+        <LogIn setView={this.setView} />
+      </div>
     );
   }
 }
