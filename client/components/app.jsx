@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './header';
 import LogIn from './view-log-in';
+import GetEmployees from './view-employees';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -8,11 +9,19 @@ export default class App extends React.Component {
     this.state = {
       message: null,
       isLoading: true,
+      view: 'log-in',
       currentUser: {
         firstName: null,
         lastName: null
       }
     };
+    this.setView = this.setView.bind(this);
+  }
+
+  setView(params) {
+    this.setState(state => ({
+      view: params
+    }));
   }
 
   componentDidMount() {
@@ -24,11 +33,14 @@ export default class App extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <Header user="Sample User" />
-        <LogIn setView={this.setView} />
-      </div>
-    );
+    switch (this.state.view) {
+      case 'log-in':
+        return (
+          <>
+            <Header user="Sample User" logout={this.setView} />
+            <GetEmployees />
+          </>
+        );
+    }
   }
 }
