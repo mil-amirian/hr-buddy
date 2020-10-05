@@ -1,0 +1,16 @@
+employeeId,firstName,lastName,street,city,state,zip,email,phone,jobTitle,role,image,wage,contract,inductionDate,startDate,qualifications,departmentId
+1,Michael (ADMIN),Park,3599 Powder House Road,Los Angeles,CA,90001,mpark211@gmail.com,213-200-6372,Accountant,Admin,/images/michael-park.jpg,25,Full-time,2/1/2021,4/1/2021,"CPA, Bachelors - Finance",1
+2,Roseanne (ADMIN),Carter,2426 Brown Street,Walnut Creek,CA,94596,rosecarter@gmail.com,714-203-5200,Human Resources,Admin,/images/rose-carter.jpg,40,Full-time,4/2/2007,4/10/2007,Masters - Human Resources,2
+3,David,Phillips,577 Woodland Terrace,Sacramento,CA,95814,davidphillips5@gmail.com,530-302-9499,IT,Employee,/images/david-phillips.jpg,35,Part-time,10/2/2020,10/10/2020,Bachelors - Information Technology,3
+4,Richard,Lemire,674 Ash Street,Dallas,TX,75202,rlemire@gmail.com,210-214-5003,Engineer,Employee,/images/richard-lemire.jpg,40,Full-time,5/2/2015,5/25/2015,"FE, Bachelors - Industrial Engineering",4
+5,Tami,Derringer,4192 Creekside Lane,Los Angeles,CA,90017,tamiderr@yahoo.com,714-404-9918,Purchasing Coordinator,Employee,/images/tami-derringer.jpg,22,Full-time,7/10/2018,7/17/2018,"GED, Associates - Business",5
+6,Keith,Black,270 Gateway Road,Portland,OR,97214,keithblack9@gmail.com,207-415-6451,Sales Representative,Employee,/images/keith-black.jpg,30,Full-time,5/6/2012,5/17/2012,Bachelors - Marketing,6
+7,Matthew,McCraney,3921 Edgewood Avenue,Fresno,CA,93702,mattmccraney@gmail.com,559-643-3941,Receptionist,Employee,/images/matt-mccraney.jpg,16,Part-time,1/20/2019,1/28/2019,GED,7
+8,Amy,Colbert,2697 Haul Road,San Bruno,CA,94066,amycolbert22@yahoo.com,650-534-6808,Marketing Manager,Employee,/images/amy-colbert.jpg,35,Full-time,2/24/2013,3/4/2013,Masters - Business,8
+9,Daniel,Baltazar,2046 Wood Creek ,Los Angeles,CA,90812,danielbaltazar01@gmail.com,808-643-6591,Senior Engineer,Employee,/images/daniel-baltazar,25,Full-time,6/13/2017,6/21/2017,Bachelors - Information Technology,9
+10,Mil,Lee,4620 CarFax,Irvine ,CA,92412,leemil@gmail.com,123-639-7721,Sales Manager,Employee,/images/mil-lee,26,Full-time,12/1/2005,12/8/2005,Masters - Business,10
+11,Jon (ADMIN),Snow,2020 The Wall,Santa Monica,CA,99110,snow@gmail.com,626-592-5507,President,Admin,/images/jon-snow,45,Full-time,9/5/2001,9/15/2001,Masters - Public Administration,11
+12,Bran,Stark,3145 Castle Road,Long Beach,CA,90815,branstark@yahoo.com,310-669-4389,Research and Development,Employee,/images/bran-stark,47,Part-time,9/5/2001,9/14/2001,Masers - Biology,12
+13,Cersel,Lannister,3067 Orange Ave,San Diego,CA,80812,lannistercersel@yahoo.com,559-325-1285,Vice President,Employee,/images/cersel-lannister,32,Full-time,3/10/2003,3/17/2003,Masters - Business ,13
+14,Ron,Swanson,1278 Cherry Ave,Santa Barbara,CA,93219,ronswanson05@gmail.com,390-221-6530,Sales Representative,Employee,/images/ron-swanson,64,Full-time,2/14/2002,2/21/2002,Bachelors - History,14
+15,Bobby , Ong,7643 Hanger Lane,Torrance,CA,96413,bobbyone4@gmail.com,310-448-3371,Marketing,Employee,/images/bobby-ong,29,Full-time,7/19/2017,7/28/2017,Bachelors - Marketing ,15

@@ -14,8 +14,33 @@ app.use(sessionMiddleware);
 app.use(express.json());
 
 app.get('/api/health-check', (req, res, next) => {
-  db.query(`select 'successfully connected' as "message"`)
+  db.query('select \'successfully connected\' as "message"')
     .then(result => res.json(result.rows[0]))
+    .catch(err => next(err));
+});
+
+app.get('/api/employees', (req, res, next) => {
+  const sql = `
+    select "firstName",
+           "lastName",
+           "jobTitle",
+           "street",
+           "city",
+           "state",
+           "email",
+           "phone",
+           "wage",
+           "contract",
+           "inductionDate",
+           "startDate",
+           "qualifications",
+           "image"
+      from "employees"
+    `;
+  db.query(sql)
+    .then(result => {
+      res.json(result.rows);
+    })
     .catch(err => next(err));
 });
 
