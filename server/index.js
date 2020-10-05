@@ -21,7 +21,9 @@ app.get('/api/health-check', (req, res, next) => {
 
 app.get('/api/employees', (req, res, next) => {
   const sql = `
-    select "firstName",
+    select "departmentId",
+            "employeeId",
+            "firstName",
            "lastName",
            "jobTitle",
            "street",
