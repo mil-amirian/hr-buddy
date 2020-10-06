@@ -3,7 +3,9 @@ import Header from './header';
 import LogIn from './view-log-in';
 import GetEmployees from './view-employees';
 import ShiftsHeader from './shifts-header';
+import MainMenu from './view-main-menu';
 import AddNewEmployee from './view-add-new-employee';
+
 
 export default class App extends React.Component {
   constructor(props) {
@@ -60,7 +62,7 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <GetEmployees setView={this.setView}/>
+            <MainMenu />
           </>
         );
       case 'add-employee':

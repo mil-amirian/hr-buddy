@@ -54,6 +54,12 @@ main {
     color: white;
 }
 
+
+.menu-item:hover {
+    cursor: pointer;
+    background-color:rgba(0,0,0,0.1);
+}
+
 form {
     border-radius: 15px;
     padding: 2rem;
@@ -81,5 +87,3 @@ form {
     height: 75px;
     background-color: #EBECF0;
 }
-
-
