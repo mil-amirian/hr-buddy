@@ -58,6 +58,22 @@ main {
 .menu-item:hover {
     cursor: pointer;
     background-color:rgba(0,0,0,0.1);
+    color: black;
+}
+
+.menu-item {
+    background-color: #70a2ed;
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+.menu-icon {
+    color: white;
+}
+
+.menu-item:hover .menu-icon {
+    color: black;
 }
 
 form {
