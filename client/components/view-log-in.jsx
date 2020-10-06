@@ -4,15 +4,22 @@ class LogIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      employees: []
+      employees: [],
+      currentUser: 'default'
     };
-
     this.getEmployees = this.getEmployees.bind(this);
-    this.hanldeChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.SubmitCurrentUser = this.SubmitCurrentUser.bind(this);
   }
 
   componentDidMount() {
     this.getEmployees();
+  }
+
+  handleChange(event) {
+    this.setState({
+      currentUser: event.target.value
+    });
   }
 
   getEmployees() {
@@ -39,10 +46,11 @@ class LogIn extends React.Component {
               <div className="input-group-prepend">
                 <label className="input-group-text" htmlFor="employee-select">Select User</label>
               </div>
-              <select className="custom-select" id="employee-select" defaultValue="--select--">
+              <select className="custom-select" id="employee-select" onChange={this.handleChange}>
+                <option value="default">--select--</option>
                 {this.state.employees.map(employee => {
                   return (
-                    <option key={employee.firstName} onChange={this.handleChange}>{employee.firstName} {employee.lastName}</option>
+                    <option key={employee.firstName}>{employee.firstName} {employee.lastName}</option>
                   );
                 })
                 }

@@ -11,10 +11,7 @@ export default class App extends React.Component {
       message: null,
       isLoading: true,
       view: 'log-in',
-      currentUser: {
-        firstName: null,
-        lastName: null
-      }
+      currentUser: null
     };
     this.setView = this.setView.bind(this);
   }
