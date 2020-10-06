@@ -1,3 +1,7 @@
+body {
+    background-color: #F8F9FA;
+}
+
 main {
     margin-top: 2rem;
 }
@@ -17,7 +21,7 @@ main {
     justify-content: center;
     padding: 0 1rem;
     border-radius: 5px;
-    background-color: aliceblue;
+    background-color: #F8F9FA;
     width: fit-content;
     height: 40px;
 }
@@ -32,14 +36,15 @@ main {
     height: 30vh;
 }
 .title {
+    margin-top: 2rem;
     border-radius: 15px;
     display: flex;
     align-items: center;
     height: 75px;
-    background-color: #F2F2F2;
+    background-color: #EBECF0;
 }
 
-.view {
+.view, .back-btn {
     background-color: #70a2ed;
     border: none;
 }
@@ -47,6 +52,34 @@ main {
 .table-headers {
     background-color: #70a2ed;
     color: white;
+}
+
+form {
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #EBECF0;
+}
+
+.section-styling {
+    border-radius: 15px;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #F8F9FA;
+}
+
+.section-styling-head {
+    border-radius: 15px;
+    padding: 10px 0;
+    background-color: #F8F9FA;
+}
+
+.role-section {
+    font-weight: 600;
+    color: black;
+    border-radius: 15px;
+    height: 75px;
+    background-color: #EBECF0;
 }
 
 

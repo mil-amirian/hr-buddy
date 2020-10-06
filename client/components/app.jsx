@@ -3,6 +3,7 @@ import Header from './header';
 import LogIn from './view-log-in';
 import GetEmployees from './view-employees';
 import ShiftsHeader from './shifts-header';
+import AddNewEmployee from './view-add-new-employee';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -30,12 +31,9 @@ export default class App extends React.Component {
       .finally(() => this.setState({ isLoading: false }));
   }
 
-  getCurrentUser(firstName, lastName) {
+  getCurrentUser(currentUser) {
     this.setState(state => ({
-      currentUser: {
-        firstName: firstName,
-        lastName: lastName
-      }
+      currentUser: currentUser
     }));
   }
 
@@ -48,28 +46,28 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <LogIn setView={this.setView}/>
+            <LogIn setView={this.setView} getCurrentUser={this.getCurrentUser}/>
           </>
         );
       case 'view-employees':
         return (
           <>
             {header}
-            <GetEmployees />
+            <AddNewEmployee setView={this.setView}/>
           </>
         );
       case 'main-menu':
         return (
           <>
             {header}
-            <GetEmployees />
+            <GetEmployees setView={this.setView}/>
           </>
         );
       case 'add-employee':
         return (
           <>
             {header}
-            <GetEmployees />
+            <AddNewEmployee setView={this.setView}/>
           </>
         );
       case 'view-employee':
