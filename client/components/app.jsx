@@ -15,6 +15,7 @@ export default class App extends React.Component {
       currentUser: null
     };
     this.setView = this.setView.bind(this);
+    this.getCurrentUser = this.getCurrentUser.bind(this);
   }
 
   setView(params) {
@@ -38,14 +39,13 @@ export default class App extends React.Component {
   }
 
   render() {
-    const header = <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
-    const shiftsHeader = <ShiftsHeader user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
+    const header = <Header user={this.state.currentUser} logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
+    const shiftsHeader = <ShiftsHeader user={this.state.currentUser} logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
 
     switch (this.state.view) {
       case 'log-in':
         return (
           <>
-            {header}
             <LogIn setView={this.setView} getCurrentUser={this.getCurrentUser}/>
           </>
         );
@@ -53,7 +53,7 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <AddNewEmployee setView={this.setView}/>
+            <AddNewEmployee setView={this.setView} />
           </>
         );
       case 'main-menu':

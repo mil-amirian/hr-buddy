@@ -5,10 +5,14 @@ class LogIn extends React.Component {
     super(props);
     this.state = {
       employees: [],
-      currentUser: 'default'
+      currentUser: {
+        name: null,
+        role: null
+      }
     };
     this.getEmployees = this.getEmployees.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.currentUser = this.currentUser.bind(this);
   }
 
   componentDidMount() {
@@ -17,9 +21,16 @@ class LogIn extends React.Component {
 
   handleChange(event) {
     event.preventDefault();
-    this.setState({
-      currentUser: event.target.value
-    });
+    for (let i = 0; i < this.state.employees.length; i++) {
+      if (`${this.state.employees[i].firstName} ${this.state.employees[i].lastName}` === event.target.value) {
+        this.setState({
+          currentUser: {
+            name: event.target.value,
+            role: this.state.employees[i].role
+          }
+        });
+      }
+    }
   }
 
   getEmployees() {
@@ -30,6 +41,11 @@ class LogIn extends React.Component {
           employees: employees
         }));
       });
+  }
+
+  currentUser() {
+    this.props.getCurrentUser(this.state.currentUser);
+    this.props.setView('main-menu');
   }
 
   render() {
@@ -57,7 +73,7 @@ class LogIn extends React.Component {
               </select>
             </div>
             <div className="d-flex flex-column justify-content-center mt-4">
-              <button type="button" className="btn btn-primary view" onClick={() => { this.props.setView('main-menu'); }}>Login Now</button>
+              <button type="button" className="btn btn-primary view" onClick={() => { this.currentUser(); }} >Login Now</button>
             </div>
           </div>
         </div>
