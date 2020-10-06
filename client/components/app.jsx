@@ -6,7 +6,6 @@ import ShiftsHeader from './shifts-header';
 import MainMenu from './view-main-menu';
 import AddNewEmployee from './view-add-new-employee';
 
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -62,42 +61,42 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <MainMenu />
+            <MainMenu getCurrentUser={this.getCurrentUser}/>
           </>
         );
       case 'add-employee':
         return (
           <>
             {header}
-            <AddNewEmployee setView={this.setView}/>
+            <AddNewEmployee setView={this.setView} getCurrentUser={this.getCurrentUser}/>
           </>
         );
       case 'view-employee':
         return (
           <>
             {header}
-            <GetEmployees />
+            <GetEmployees getCurrentUser={this.getCurrentUser}/>
           </>
         );
       case 'view-shifts':
         return (
           <>
             {shiftsHeader}
-            <GetEmployees />
+            <GetEmployees getCurrentUser={this.getCurrentUser}/>
           </>
         );
       case 'view-hours':
         return (
           <>
             {header}
-            <GetEmployees />
+            <GetEmployees getCurrentUser={this.getCurrentUser}/>
           </>
         );
       case 'view-departments':
         return (
           <>
             {header}
-            <GetEmployees />
+            <GetEmployees getCurrentUser={this.getCurrentUser}/>
           </>
         );
     }

@@ -44,7 +44,7 @@ class LogIn extends React.Component {
   }
 
   currentUser() {
-    this.props.getCurrentUser(this.state.currentUser);
+    this.props.getCurrentUser(this.state.currentUser.name);
     this.props.setView('main-menu');
   }
 
