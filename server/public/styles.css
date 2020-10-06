@@ -23,8 +23,9 @@ main {
 }
 
 .log-out:hover {
-    background-color: #b70012;
+    background-color: #DD3444;
     border-color: #dd3444;
+    color: white;
 }
 
 .spacer {

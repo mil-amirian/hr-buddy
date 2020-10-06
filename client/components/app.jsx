@@ -37,7 +37,56 @@ export default class App extends React.Component {
       case 'log-in':
         return (
           <>
-            <Header user="Sample User" logout={this.setView} />
+            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            <LogIn />
+          </>
+        );
+      case 'view-employees':
+        return (
+          <>
+            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            <GetEmployees />
+          </>
+        );
+      case 'main-menu':
+        return (
+          <>
+            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            <GetEmployees />
+          </>
+        );
+      case 'add-employee':
+        return (
+          <>
+            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            <GetEmployees />
+          </>
+        );
+      case 'view-employee':
+        return (
+          <>
+            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            <GetEmployees />
+          </>
+        );
+      case 'view-shifts':
+        return (
+          <>
+            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            <GetEmployees />
+          </>
+        );
+      case 'view-hours':
+        return (
+          <>
+            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            <GetEmployees />
+          </>
+        );
+      case 'view-departments':
+        return (
+          <>
+            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
             <GetEmployees />
           </>
         );

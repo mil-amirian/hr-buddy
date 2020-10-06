@@ -30,7 +30,7 @@ export default class ViewEmployees extends React.Component {
     if (this.state.employees) {
       return (
         <main className="d-flex justify-content-center">
-          <div className="page-content col-7">
+          <div className="page-content col-10">
             <div className="title d-flex justify-content-center">
               <h2 className="page-title">View Employees</h2>
             </div>
