@@ -29,8 +29,8 @@ export default class ViewEmployees extends React.Component {
   render() {
     if (this.state.employees) {
       return (
-        <main className="d-flex justify-content-center">
-          <div className="page-content col-7">
+        <main className="d-flex justify-content-center mb-4">
+          <div className="page-content col-10">
             <div className="title d-flex justify-content-center">
               <h2 className="page-title">View Employees</h2>
             </div>
@@ -43,12 +43,13 @@ export default class ViewEmployees extends React.Component {
                         Add Employee
                 </button>
               </div>
-              <table className="table table-striped">
-                <thead className="thead-dark table-headers">
+              <table className="table table-striped mb-4 border rounded">
+                <thead className="alert alert-dark table-headers">
                   <tr>
                     <th scope="col">Employee ID</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
+                    <th scope="col">Job Title</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
@@ -56,7 +57,7 @@ export default class ViewEmployees extends React.Component {
                   {
                     this.state.employees.map(employee => {
                       return (
-                        <EachEmployee firstName={employee.firstName} lastName={employee.lastName} employeeId={employee.employeeId} key={employee.employeeId}/>
+                        <EachEmployee firstName={employee.firstName} lastName={employee.lastName} employeeId={employee.employeeId} jobTitle={employee.jobTitle} key={employee.employeeId}/>
                       );
                     })
                   }

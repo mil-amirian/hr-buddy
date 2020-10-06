@@ -86,7 +86,42 @@ app.post('/api/photo', upload.single('avatar'), (req, res, next) => {
 app.post('/photos/upload', upload.array('photos', 12), (req, res, next) => {
   // req.files is array of `photos` files
   // req.body will contain the text fields, if there were any
+});
 
+app.post('/api/employees', (req, res) => {
+  const {
+    firstName, lastName, email, phone, street, city, state, zip, jobTitle, role,
+    image, wage, contract, inductionDate, startDate, qualifications, departmentId
+  } = req.body;
+  const postInput = ` 
+  insert into employees ("firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle", 
+  "role", "image" ,"wage", "contract", "inductionDate", "startDate", "qualifications", "departmentId")
+                values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) 
+            returning "firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle", 
+            "role", "image" ,"wage", "contract", "inductionDate", "startDate", "qualifications", "departmentId"
+  `;
+  const values = [firstName, lastName, email, phone, street, city, state, zip, jobTitle, role,
+    image, wage, contract, inductionDate, startDate, qualifications, departmentId];
+
+  if (!firstName || !lastName || !email || !phone || !street || !city || !state || !zip || !jobTitle || !role ||
+    !image || !wage || !contract || !inductionDate || !startDate || !qualifications || !departmentId) {
+    res.status(400).json({
+      error: 'You need to add values into every input field'
+    });
+  } else {
+    db.query(postInput, values)
+      .then(result => {
+
+        res.status(201).json(result.rows[0]);
+      }
+      )
+      .catch(err => {
+        res.status(500).json({
+          error: 'An unexpected error occurred'
+        });
+        console.error(err);
+      });
+  }
 });
 
 app.use('/api', (req, res, next) => {

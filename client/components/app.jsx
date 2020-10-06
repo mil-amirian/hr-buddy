@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import LogIn from './view-log-in';
 import GetEmployees from './view-employees';
+import ShiftsHeader from './shifts-header';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -32,12 +33,73 @@ export default class App extends React.Component {
       .finally(() => this.setState({ isLoading: false }));
   }
 
+  getCurrentUser(firstName, lastName) {
+    this.setState(state => ({
+      currentUser: {
+        firstName: firstName,
+        lastName: lastName
+      }
+    }));
+  }
+
   render() {
+    const header = <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
+    const shiftsHeader = <ShiftsHeader user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
+
     switch (this.state.view) {
       case 'log-in':
         return (
           <>
-            <Header user="Sample User" logout={this.setView} />
+            {header}
+            <LogIn setView={this.setView}/>
+          </>
+        );
+      case 'view-employees':
+        return (
+          <>
+            {header}
+            <GetEmployees />
+          </>
+        );
+      case 'main-menu':
+        return (
+          <>
+            {header}
+            <GetEmployees />
+          </>
+        );
+      case 'add-employee':
+        return (
+          <>
+            {header}
+            <GetEmployees />
+          </>
+        );
+      case 'view-employee':
+        return (
+          <>
+            {header}
+            <GetEmployees />
+          </>
+        );
+      case 'view-shifts':
+        return (
+          <>
+            {shiftsHeader}
+            <GetEmployees />
+          </>
+        );
+      case 'view-hours':
+        return (
+          <>
+            {header}
+            <GetEmployees />
+          </>
+        );
+      case 'view-departments':
+        return (
+          <>
+            {header}
             <GetEmployees />
           </>
         );
