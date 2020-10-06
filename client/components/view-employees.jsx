@@ -44,7 +44,7 @@ export default class ViewEmployees extends React.Component {
                 </button>
               </div>
               <table className="table table-striped mb-4 border rounded">
-                <thead className="alert alert-dark table-headers header-text-color">
+                <thead className="alert alert-dark table-headers">
                   <tr>
                     <th scope="col">Employee ID</th>
                     <th scope="col">First Name</th>
