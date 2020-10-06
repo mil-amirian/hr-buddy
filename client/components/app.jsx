@@ -32,61 +32,72 @@ export default class App extends React.Component {
       .finally(() => this.setState({ isLoading: false }));
   }
 
+  getCurrentUser(firstName, lastName) {
+    this.setState(state => ({
+      currentUser: {
+        firstName: firstName,
+        lastName: lastName
+      }
+    }));
+  }
+
   render() {
+    const header = <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
+
     switch (this.state.view) {
       case 'log-in':
         return (
           <>
-            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
-            <LogIn />
+            {header}
+            <LogIn setView={this.setView}/>
           </>
         );
       case 'view-employees':
         return (
           <>
-            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            {header}
             <GetEmployees />
           </>
         );
       case 'main-menu':
         return (
           <>
-            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            {header}
             <GetEmployees />
           </>
         );
       case 'add-employee':
         return (
           <>
-            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            {header}
             <GetEmployees />
           </>
         );
       case 'view-employee':
         return (
           <>
-            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            {header}
             <GetEmployees />
           </>
         );
       case 'view-shifts':
         return (
           <>
-            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            {header}
             <GetEmployees />
           </>
         );
       case 'view-hours':
         return (
           <>
-            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            {header}
             <GetEmployees />
           </>
         );
       case 'view-departments':
         return (
           <>
-            <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView}/>
+            {header}
             <GetEmployees />
           </>
         );
