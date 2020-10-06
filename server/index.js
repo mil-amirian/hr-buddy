@@ -79,9 +79,10 @@ app.post('/api/employees', (req, res) => {
   const values = [firstName, lastName, email, phone, street, city, state, zip, jobTitle, role,
     image, wage, contract, inductionDate, startDate, qualifications, departmentId];
 
-  if (!firstName || !lastName || !email || !phone) {
+  if (!firstName || !lastName || !email || !phone || !street || !city || !state || !zip || !jobTitle || !role ||
+    !image || !wage || !contract || !inductionDate || !startDate || !qualifications || !departmentId) {
     res.status(400).json({
-      error: 'You need to put a firstName and lastName and email and phone number'
+      error: 'You need to add values into every input field'
     });
   } else {
     db.query(postInput, values)
