@@ -6,6 +6,7 @@ export default function EachEmployee(props) {
       <th scope="row">{props.employeeId}</th>
       <td>{props.firstName}</td>
       <td>{props.lastName}</td>
+      <td>{props.jobTitle}</td>
       <td>
         <button className="btn btn-primary view">
           <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" className="bi bi-person-badge mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
