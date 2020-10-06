@@ -10,7 +10,7 @@ const multer = require('multer');
 // SET STORAGE
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads');
+    cb(null, './public/uploads');
   },
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now());
@@ -34,8 +34,7 @@ app.get('/api/health-check', (req, res, next) => {
 
 app.get('/api/employees', (req, res, next) => {
   const sql = `
-    select "departmentId",
-            "employeeId",
+    select "employeeId",
             "firstName",
            "lastName",
            "jobTitle",
@@ -49,9 +48,13 @@ app.get('/api/employees', (req, res, next) => {
            "inductionDate",
            "startDate",
            "qualifications",
-           "image"
+           "image",
+           "role",
+           "departments"."name" as "department"
       from "employees"
+      join "departments" using ("departmentId")
     `;
+
   db.query(sql)
     .then(result => {
       res.json(result.rows);
@@ -61,8 +64,10 @@ app.get('/api/employees', (req, res, next) => {
 
 app.get('/api/employees/:employeeId', (req, res, next) => {
   const sql = `
-    select *
+    select *,
+            "departments"."name" as "department"
       from "employees"
+      join "departments" using ("departmentId")
       where "employeeId" = $1
   `;
   const value = [parseInt(req.params.employeeId, 10)];
@@ -77,10 +82,11 @@ app.get('/api/employees/:employeeId', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.post('/api/photo', upload.single('avatar'), (req, res, next) => {
+app.post('/api/upload', upload.single('avatar'), (req, res, next) => {
   // req.file is the `avatar` file
   // req.body will hold the text fields, if there were any
-
+  // console.log(req.file);
+  // console.log(req.body);
 });
 
 app.post('/photos/upload', upload.array('photos', 12), (req, res, next) => {
@@ -93,11 +99,11 @@ app.post('/api/employees', (req, res) => {
     firstName, lastName, email, phone, street, city, state, zip, jobTitle, role,
     image, wage, contract, inductionDate, startDate, qualifications, departmentId
   } = req.body;
-  const postInput = ` 
-  insert into employees ("firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle", 
+  const postInput = `
+  insert into employees ("firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle",
   "role", "image" ,"wage", "contract", "inductionDate", "startDate", "qualifications", "departmentId")
-                values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) 
-            returning "firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle", 
+                values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)
+            returning "firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle",
             "role", "image" ,"wage", "contract", "inductionDate", "startDate", "qualifications", "departmentId"
   `;
   const values = [firstName, lastName, email, phone, street, city, state, zip, jobTitle, role,

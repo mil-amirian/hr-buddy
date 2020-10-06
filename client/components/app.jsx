@@ -4,6 +4,8 @@ import LogIn from './view-log-in';
 import GetEmployees from './view-employees';
 import ShiftsHeader from './shifts-header';
 import MainMenu from './view-main-menu';
+import AddNewEmployee from './view-add-new-employee';
+
 
 export default class App extends React.Component {
   constructor(props) {
@@ -15,6 +17,7 @@ export default class App extends React.Component {
       currentUser: null
     };
     this.setView = this.setView.bind(this);
+    this.getCurrentUser = this.getCurrentUser.bind(this);
   }
 
   setView(params) {
@@ -31,32 +34,28 @@ export default class App extends React.Component {
       .finally(() => this.setState({ isLoading: false }));
   }
 
-  getCurrentUser(firstName, lastName) {
+  getCurrentUser(currentUser) {
     this.setState(state => ({
-      currentUser: {
-        firstName: firstName,
-        lastName: lastName
-      }
+      currentUser: currentUser
     }));
   }
 
   render() {
-    const header = <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
-    const shiftsHeader = <ShiftsHeader user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
+    const header = <Header user={this.state.currentUser} logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
+    const shiftsHeader = <ShiftsHeader user={this.state.currentUser} logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
 
     switch (this.state.view) {
       case 'log-in':
         return (
           <>
-            {header}
-            <LogIn setView={this.setView}/>
+            <LogIn setView={this.setView} getCurrentUser={this.getCurrentUser}/>
           </>
         );
       case 'view-employees':
         return (
           <>
             {header}
-            <GetEmployees />
+            <AddNewEmployee setView={this.setView} />
           </>
         );
       case 'main-menu':
@@ -70,7 +69,7 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <GetEmployees />
+            <AddNewEmployee setView={this.setView}/>
           </>
         );
       case 'view-employee':
