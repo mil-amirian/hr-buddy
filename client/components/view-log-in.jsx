@@ -4,14 +4,11 @@ class LogIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      employees: [
-        {
-          firstName: null,
-          lastName: null
-        }
-      ]
+      employees: []
     };
+
     this.getEmployees = this.getEmployees.bind(this);
+    this.hanldeChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -42,14 +39,17 @@ class LogIn extends React.Component {
               <div className="input-group-prepend">
                 <label className="input-group-text" htmlFor="employee-select">Select User</label>
               </div>
-              <select className="custom-select" id="employee-select">
+              <select className="custom-select" id="employee-select" defaultValue="--select--">
                 {this.state.employees.map(employee => {
                   return (
-                    <option key={employee.firstName} setView={this.props.setView}>{employee.firstName} {employee.lastName}</option>
+                    <option key={employee.firstName} onChange={this.handleChange}>{employee.firstName} {employee.lastName}</option>
                   );
                 })
                 }
               </select>
+            </div>
+            <div className="d-flex flex-column justify-content-center mt-4">
+              <button type="button" className="btn btn-primary view" onClick={() => { this.props.setView('main-menu'); }}>Login Now</button>
             </div>
           </div>
         </div>
