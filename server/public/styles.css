@@ -16,6 +16,16 @@ main {
     height: 50px;
 }
 
+#view-emp-btn {
+    color: #70a2ed;
+}
+
+#view-emp-btn:hover {
+    color: black;
+    background-color: white;
+}
+
+
 .current-user {
     display: flex;
     justify-content: center;
@@ -24,6 +34,11 @@ main {
     background-color: #F8F9FA;
     width: fit-content;
     height: 40px;
+}
+
+.log-out {
+    color: #70a2ed;
+ 
 }
 
 .log-out:hover {
