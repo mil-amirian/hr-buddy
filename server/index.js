@@ -10,7 +10,7 @@ const multer = require('multer');
 // SET STORAGE
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads');
+    cb(null, './public/uploads');
   },
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now());
@@ -49,6 +49,7 @@ app.get('/api/employees', (req, res, next) => {
            "startDate",
            "qualifications",
            "image",
+           "role",
            "departments"."name" as "department"
       from "employees"
       join "departments" using ("departmentId")
@@ -81,10 +82,11 @@ app.get('/api/employees/:employeeId', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.post('/api/photo', upload.single('avatar'), (req, res, next) => {
+app.post('/api/upload', upload.single('avatar'), (req, res, next) => {
   // req.file is the `avatar` file
   // req.body will hold the text fields, if there were any
-
+  // console.log(req.file);
+  // console.log(req.body);
 });
 
 app.post('/photos/upload', upload.array('photos', 12), (req, res, next) => {
