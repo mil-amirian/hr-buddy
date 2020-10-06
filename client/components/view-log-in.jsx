@@ -9,7 +9,6 @@ class LogIn extends React.Component {
     };
     this.getEmployees = this.getEmployees.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.SubmitCurrentUser = this.SubmitCurrentUser.bind(this);
   }
 
   componentDidMount() {
