@@ -19,7 +19,8 @@ export default class AddNewEmployee extends React.Component {
       startDate: null,
       inductionDate: null,
       qualifications: null,
-      photo: null
+      photo: null,
+      role: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -89,6 +90,14 @@ export default class AddNewEmployee extends React.Component {
     } else if (event.target.id === 'state') {
       this.setState({
         state: event.target.value
+      });
+    } else if (event.target.id === 'admin') {
+      this.setState({
+        role: event.target.value
+      });
+    } else if (event.target.id === 'employee') {
+      this.setState({
+        role: event.target.value
       });
     }
   }
@@ -264,11 +273,11 @@ export default class AddNewEmployee extends React.Component {
                 </div>
                 <div className="row justify-content-center role-section">
                   <div className="form-check form-check-inline">
-                    <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required/>
+                    <input className="form-check-input" type="radio" name="inlineRadioOptions" id="admin" value="Admin" required onChange={this.handleChange}/>
                     <label className="form-check-label" htmlFor="inlineRadio1">ADMIN</label>
                   </div>
                   <div className="form-check form-check-inline">
-                    <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required/>
+                    <input className="form-check-input" type="radio" name="inlineRadioOptions" id="employee" value="Employee" required onChange={this.handleChange}/>
                     <label className="form-check-label" htmlFor="inlineRadio2">EMPLOYEE</label>
                   </div>
                 </div>
