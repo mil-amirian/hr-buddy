@@ -6,6 +6,19 @@ const ClientError = require('./client-error');
 const staticMiddleware = require('./static-middleware');
 const sessionMiddleware = require('./session-middleware');
 
+const multer = require('multer');
+// SET STORAGE
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads');
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now());
+  }
+});
+
+const upload = multer({ storage: storage });
+
 const app = express();
 
 app.use(staticMiddleware);
@@ -62,6 +75,18 @@ app.get('/api/employees/:employeeId', (req, res, next) => {
       }
     })
     .catch(err => next(err));
+});
+
+app.post('/api/photo', upload.single('avatar'), (req, res, next) => {
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
+
+});
+
+app.post('/photos/upload', upload.array('photos', 12), (req, res, next) => {
+  // req.files is array of `photos` files
+  // req.body will contain the text fields, if there were any
+
 });
 
 app.use('/api', (req, res, next) => {
