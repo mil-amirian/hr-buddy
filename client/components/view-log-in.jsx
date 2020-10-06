@@ -16,6 +16,7 @@ class LogIn extends React.Component {
   }
 
   handleChange(event) {
+    event.preventDefault();
     this.setState({
       currentUser: event.target.value
     });
