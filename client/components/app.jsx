@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import LogIn from './view-log-in';
 import GetEmployees from './view-employees';
+import ShiftsHeader from './shifts-header';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ export default class App extends React.Component {
 
   render() {
     const header = <Header user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
+    const shiftsHeader = <ShiftsHeader user="Sample User" logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
 
     switch (this.state.view) {
       case 'log-in':
@@ -83,7 +85,7 @@ export default class App extends React.Component {
       case 'view-shifts':
         return (
           <>
-            {header}
+            {shiftsHeader}
             <GetEmployees />
           </>
         );
