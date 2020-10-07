@@ -47,7 +47,7 @@ export default class App extends React.Component {
       case 'log-in':
         return (
           <>
-            <LogIn setView={this.setView} getCurrentUser={this.getCurrentUser}/>
+            <LogIn setView={this.setView} getCurrentUser={this.getCurrentUser} />
           </>
         );
       case 'view-employees':
@@ -61,42 +61,42 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <MainMenu getCurrentUser={this.getCurrentUser}/>
+            <MainMenu getCurrentUser={this.getCurrentUser} />
           </>
         );
       case 'add-employee':
         return (
           <>
             {header}
-            <AddNewEmployee setView={this.setView} getCurrentUser={this.getCurrentUser}/>
+            <AddNewEmployee setView={this.setView} getCurrentUser={this.getCurrentUser} />
           </>
         );
       case 'view-employee':
         return (
           <>
             {header}
-            <GetEmployees getCurrentUser={this.getCurrentUser}/>
+            <GetEmployees getCurrentUser={this.getCurrentUser} />
           </>
         );
       case 'view-shifts':
         return (
           <>
             {shiftsHeader}
-            <GetEmployees getCurrentUser={this.getCurrentUser}/>
+            <GetEmployees getCurrentUser={this.getCurrentUser} />
           </>
         );
       case 'view-hours':
         return (
           <>
             {header}
-            <GetEmployees getCurrentUser={this.getCurrentUser}/>
+            <GetEmployees getCurrentUser={this.getCurrentUser} />
           </>
         );
       case 'view-departments':
         return (
           <>
             {header}
-            <GetEmployees getCurrentUser={this.getCurrentUser}/>
+            <GetEmployees getCurrentUser={this.getCurrentUser} />
           </>
         );
     }

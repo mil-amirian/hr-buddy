@@ -6,7 +6,7 @@ export default function MainMenu(props) {
       <div className="spacer"></div>
       <div className="container align-items-center">
         <div className="row d-flex justify-content-center">
-          <div className="menu-item col-md-5 border border-light m-2">
+          <div className="menu-item col-md-5 border border-light m-2" onClick={() => { this.props.setView('view-employees'); }}>
             <i className="menu-icon fas fa-address-card fa-7x"/>
             <h2>View Employees</h2>
           </div>
@@ -16,7 +16,7 @@ export default function MainMenu(props) {
           </div>
         </div>
         <div className="row d-flex justify-content-center">
-          <div className="menu-item col-md-5 border border-light m-2">
+          <div className="menu-item col-md-5 border border-light m-2" onClick={() => { this.props.setView('add-employee'); }}>
             <i className="menu-icon fa fa-user-plus fa-7x" />
             <h2>Add Employee</h2>
           </div>

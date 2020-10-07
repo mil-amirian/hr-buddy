@@ -48,8 +48,9 @@ main {
 }
 
 .spacer {
-    height: 30vh;
+    height: 20vh;
 }
+
 .title {
     margin-top: 2rem;
     border-radius: 15px;
@@ -81,6 +82,8 @@ main {
     color: white;
     border-radius: 15px;
     padding: 2rem;
+    height: 278px;
+    width: 666.53px;
 }
 
 .menu-icon {
