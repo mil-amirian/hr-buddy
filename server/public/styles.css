@@ -148,10 +148,8 @@ form {
 }
 
 .employee-image {
-    /* border: solid rgb(123, 123, 123) 7px; */
     border-radius: 15px;
-    width: 250px;
+    width: 20vw;
     height: auto;
-    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
-
+    box-shadow: 0 8px 6px -6px black
 }

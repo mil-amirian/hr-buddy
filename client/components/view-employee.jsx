@@ -136,13 +136,13 @@ export default class ViewEmployee extends React.Component {
                 <div className="col-12 d-flex flex-column align-items-left justify-content-between">
                   <h5 className="ml-1 mt-1">EMPLOYEE PHOTO & ROLE</h5>
                   <div className="form-group d-flex flex-column align-items-center">
-                    <div className="row mb-3">
+                    <div className="row image-bkg">
                       <img className="employee-image" src={this.state.employee.image} alt={this.state.employee.image}/>
                     </div>
                   </div>
                   <div className="row justify-content-center role-section">
                     <div className="form-check form-check-inline">
-                      <p className="employee-data-role">{this.state.employee.role}</p>
+                      <span className="employee-data-role">{this.state.employee.role}</span>
                     </div>
                   </div>
                 </div>
