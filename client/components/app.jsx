@@ -5,6 +5,7 @@ import GetEmployees from './view-employees';
 import ShiftsHeader from './shifts-header';
 import MainMenu from './view-main-menu';
 import AddNewEmployee from './view-add-new-employee';
+import ViewDepartments from './view-departments';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -96,7 +97,8 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <GetEmployees getCurrentUser={this.getCurrentUser}/>
+            <ViewDepartments/>
+            {/* <GetEmployees getCurrentUser={this.getCurrentUser}/> */}
           </>
         );
     }
