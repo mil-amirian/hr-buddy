@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from './header';
 import LogIn from './view-log-in';
-import GetEmployees from './view-employees';
 import ShiftsHeader from './shifts-header';
 import MainMenu from './view-main-menu';
 import AddNewEmployee from './view-add-new-employee';
+import ViewEmployee from './view-employee';
+import ViewEmployees from './view-employees';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -13,10 +14,12 @@ export default class App extends React.Component {
       message: null,
       isLoading: true,
       view: 'log-in',
-      currentUser: null
+      currentUser: null,
+      employeeToView: null
     };
     this.setView = this.setView.bind(this);
     this.getCurrentUser = this.getCurrentUser.bind(this);
+    this.selectedUserToView = this.selectedUserToView.bind(this);
   }
 
   setView(params) {
@@ -39,6 +42,12 @@ export default class App extends React.Component {
     }));
   }
 
+  selectedUserToView(selectedUser) {
+    this.setState(state => ({
+      employeeToView: selectedUser
+    }));
+  }
+
   render() {
     const header = <Header user={this.state.currentUser} logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
     const shiftsHeader = <ShiftsHeader user={this.state.currentUser} logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
@@ -54,7 +63,7 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <GetEmployees setView={this.setView} getCurrentUser={this.getCurrentUser}/>
+            <ViewEmployees setView={this.setView} getCurrentUser={this.getCurrentUser} selectedUser={this.selectedUserToView}/>
           </>
         );
       case 'main-menu':
@@ -75,28 +84,28 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <GetEmployees getCurrentUser={this.getCurrentUser} />
+            <ViewEmployee getCurrentUser={this.getCurrentUser} selectedUser={this.state.employeeToView} setView={this.setView}/>
           </>
         );
       case 'view-shifts':
         return (
           <>
             {shiftsHeader}
-            <GetEmployees getCurrentUser={this.getCurrentUser} />
+            <ViewEmployees getCurrentUser={this.getCurrentUser} />
           </>
         );
       case 'view-hours':
         return (
           <>
             {header}
-            <GetEmployees getCurrentUser={this.getCurrentUser} />
+            <ViewEmployees getCurrentUser={this.getCurrentUser} />
           </>
         );
       case 'view-departments':
         return (
           <>
             {header}
-            <GetEmployees getCurrentUser={this.getCurrentUser} />
+            <ViewEmployees getCurrentUser={this.getCurrentUser} />
           </>
         );
     }
