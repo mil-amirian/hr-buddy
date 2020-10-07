@@ -29,7 +29,7 @@ export default class ViewEmployee extends React.Component {
           <div className="page-content col-10">
             <div className="title d-flex justify-content-between">
               <button className="col-1 back-btn btn btn-primary ml-3" onClick={() => { this.props.setView('view-employees'); }}>BACK</button>
-              <h2 className="col-10 page-title text-center">Viewing EmpName</h2>
+              <h2 className="col-10 page-title text-center">Viewing {this.state.employee.firstName} {this.state.employee.lastName}</h2>
               <span className="col-1"></span>
             </div>
           </div>

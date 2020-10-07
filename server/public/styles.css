@@ -162,3 +162,8 @@ form {
     height: auto;
     box-shadow: 0 8px 6px -6px black
 }
+
+.hours-title {
+    padding: 4rem 0;
+}
+

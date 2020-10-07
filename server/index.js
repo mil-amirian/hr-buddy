@@ -82,25 +82,18 @@ app.get('/api/employees/:employeeId', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.get('/api/departments/:departmentId', (req, res, next) => {
+app.get('/api/departments', (req, res, next) => {
   const sql = ` 
-  select "employees"."firstName",
-      "employees"."lastName",
-      "departments"."name" as "department"
+  select count ("firstName") as "Members in Department",
+      "departments"."name" as "department", 
+      "departments"."departmentId"
   from "employees"
   join "departments" using ("departmentId")
-  where "departmentId" = $1
+  group by "departments"."name", "departments"."departmentId"
   `;
-
-  const value = [parseInt(req.params.departmentId, 10)];
-
-  db.query(sql, value)
+  db.query(sql)
     .then(result => {
-      if (result.rows) {
-        res.json(result.rows);
-      } else {
-        next(new ClientError(`departmentId ${value} does not exist`, 404));
-      }
+      res.json(result.rows);
     })
     .catch(err => next(err));
 });
