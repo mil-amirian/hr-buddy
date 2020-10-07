@@ -66,7 +66,7 @@ class LogIn extends React.Component {
                 <option value="default">--select--</option>
                 {this.state.employees.map(employee => {
                   return (
-                    <option key={employee.firstName}>{employee.firstName} {employee.lastName}</option>
+                    <option key={employee.employeeId}>{employee.firstName} {employee.lastName}</option>
                   );
                 })
                 }
