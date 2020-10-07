@@ -45,7 +45,11 @@ class LogIn extends React.Component {
 
   currentUser() {
     this.props.getCurrentUser(this.state.currentUser.name);
-    this.props.setView('main-menu');
+    if (this.state.currentUser.role === 'Admin') {
+      this.props.setView('main-menu');
+    } else {
+      this.props.setView('view-shifts');
+    }
   }
 
   render() {
@@ -66,14 +70,14 @@ class LogIn extends React.Component {
                 <option value="default">--select--</option>
                 {this.state.employees.map(employee => {
                   return (
-                    <option key={employee.firstName}>{employee.firstName} {employee.lastName}</option>
+                    <option key={employee.employeeId}>{employee.firstName} {employee.lastName}</option>
                   );
                 })
                 }
               </select>
             </div>
             <div className="d-flex flex-column justify-content-center mt-4">
-              <button type="button" className="btn btn-primary view" onClick={() => { this.currentUser(); }} >Login Now</button>
+              <button type="button" className="btn btn-primary view login-btn" disabled={!this.state.currentUser.name} onClick={() => { this.currentUser(); }} >Login Now</button>
             </div>
           </div>
         </div>

@@ -6,15 +6,36 @@ main {
     margin-top: 2rem;
 }
 
+header {
+
+}
+
+#home-btn {
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
+}
+
 .home-icon {
     max-width: 36px;
     max-height: fit-content;
+
 }
 
 .navbar-header {
     background-color: #70a2ed;
     height: 50px;
 }
+
+#view-emp-btn {
+    color: #70a2ed;
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
+
+}
+
+#view-emp-btn:hover {
+    color: black;
+    background-color: white;
+}
+
 
 .current-user {
     display: flex;
@@ -24,6 +45,13 @@ main {
     background-color: #F8F9FA;
     width: fit-content;
     height: 40px;
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
+
+}
+
+.log-out {
+    color: #70a2ed;
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
 }
 
 .log-out:hover {
@@ -33,8 +61,14 @@ main {
 }
 
 .spacer {
-    height: 30vh;
+    height: 20vh;
 }
+
+.login-btn:disabled {
+    background-color: #e9ecef;
+    color: black;
+}
+
 .title {
     margin-top: 2rem;
     border-radius: 15px;
@@ -58,6 +92,30 @@ main {
 .menu-item:hover {
     cursor: pointer;
     background-color:rgba(0,0,0,0.1);
+    color: white;
+    background-color: #70a2ed;
+    transform: scale(1.02);
+    box-shadow: 0 8px 6px -6px black
+
+}
+
+.menu-item {
+    background-color: #70a2ed;
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: 0.2s;
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
+
+}
+
+.menu-icon {
+    color: white;
+}
+
+.clock-in-button,
+.clock-out-button {
+    width: 500px;
 }
 
 form {
@@ -87,3 +145,25 @@ form {
     height: 75px;
     background-color: #EBECF0;
 }
+
+.employee-data {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.employee-data-role {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.employee-image {
+    border-radius: 15px;
+    width: 20vw;
+    height: auto;
+    box-shadow: 0 8px 6px -6px black
+}
+
+.hours-title {
+    padding: 4rem 0;
+}
+

@@ -81,6 +81,22 @@ app.get('/api/employees/:employeeId', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/departments', (req, res, next) => {
+  const sql = ` 
+  select count ("firstName") as "Members in Department",
+      "departments"."name" as "department", 
+      "departments"."departmentId"
+  from "employees"
+  join "departments" using ("departmentId")
+  group by "departments"."name", "departments"."departmentId"
+  `;
+  db.query(sql)
+    .then(result => {
+      res.json(result.rows);
+    })
+    .catch(err => next(err));
+});
+
 app.post('/api/upload', upload.single('avatar'), (req, res, next) => {
   // req.file is the `avatar` file
   // console.log('this is req.file', req.file);
