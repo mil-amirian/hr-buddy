@@ -81,6 +81,29 @@ app.get('/api/employees/:employeeId', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/departments/:departmentId', (req, res, next) => {
+  const sql = ` 
+  select "employees"."firstName",
+      "employees"."lastName",
+      "departments"."name" as "department"
+  from "employees"
+  join "departments" using ("departmentId")
+  where "departmentId" = $1
+  `;
+
+  const value = [parseInt(req.params.departmentId, 10)];
+
+  db.query(sql, value)
+    .then(result => {
+      if (result.rows) {
+        res.json(result.rows);
+      } else {
+        next(new ClientError(`departmentId ${value} does not exist`, 404));
+      }
+    })
+    .catch(err => next(err));
+});
+
 app.post('/api/photo', upload.single('avatar'), (req, res, next) => {
   // req.file is the `avatar` file
   // req.body will hold the text fields, if there were any
