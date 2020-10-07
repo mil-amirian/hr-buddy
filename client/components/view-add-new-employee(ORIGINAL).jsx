@@ -14,22 +14,16 @@ export default class AddNewEmployee extends React.Component {
       email: null,
       phone: null,
       wage: null,
-      departmentId: 'default',
+      department: 'default',
       contract: 'default',
       startDate: null,
       inductionDate: null,
       qualifications: null,
-      role: null,
-      image: null,
-      photo: {
-        file: null,
-        preview: null
-      },
-      departments: []
+      photo: null,
+      role: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handlePhotoChange = this.handlePhotoChange.bind(this);
   }
 
   handleChange(event) {
@@ -71,7 +65,7 @@ export default class AddNewEmployee extends React.Component {
       });
     } else if (event.target.id === 'department') {
       this.setState({
-        departmentId: event.target.value
+        department: event.target.value
       });
     } else if (event.target.id === 'contract') {
       this.setState({
@@ -110,69 +104,6 @@ export default class AddNewEmployee extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append('avatar', this.state.photo.file);
-
-    fetch('/api/upload', {
-      method: 'POST',
-      body: formData
-    })
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        // console.log('data', data);
-        // console.log('data.filename', data.filename);
-        // console.log('data.path', data.path);
-        this.setState({
-          image: '/upload/' + data.filename
-        });
-        // alert('The file is successfully uploaded');
-      })
-      .then(() => {
-        const employee = Object.assign({}, this.state);
-        // console.log('employee', employee);
-        fetch('/api/employees', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(employee)
-        });
-      })
-      .catch(error => {
-        console.error(error);
-      });
-    // const employee = Object.assign({}, this.state);
-
-    // fetch('/api/employees', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(employee)
-    // }).catch(error => {
-    //   console.error(error);
-    // });
-
-  }
-
-  handlePhotoChange(event) {
-    // console.log(event.target.files[0]);
-    this.setState({
-      photo: {
-        file: event.target.files[0],
-        preview: URL.createObjectURL(event.target.files[0])
-      }
-    });
-  }
-
-  renderImage(preview) {
-    return (
-      <div className="d-flex justify-content-center mb-4 s8 offset-s2 center">
-        {preview && <img src={preview} style={{ maxWidth: '100%' }} className="mb-4" alt="Uploaded image preview" />}
-      </div>
-    );
   }
 
   render() {
@@ -298,14 +229,13 @@ export default class AddNewEmployee extends React.Component {
                   </div>
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">Department</label>
-                    <select id="department" value={this.state.departmentId} name="department" className="form-control" onChange={this.handleChange} required>
+                    <select id="department" value={this.state.department} name="department" className="form-control" onChange={this.handleChange} required>
                       <option value="default">Choose...</option>
-                      <option value="1">Marketing</option>
-                      <option value="2">Management</option>
-                      <option value="3">Production</option>
-                      <option value="4">R&D</option>
-                      <option value="5">Finance</option>
-                      <option value="6">IT</option>
+                      <option value="Marketing">Marketing</option>
+                      <option value="ManagementL">Management</option>
+                      <option value="Production">Production</option>
+                      <option value="R&D">R&D</option>
+                      <option value="Finance">Finance</option>
                     </select>
                   </div>
                   <div className="mt-2">
@@ -336,16 +266,9 @@ export default class AddNewEmployee extends React.Component {
                 <h5 className="ml-1 mt-1">EMPLOYEE PHOTO & ROLE</h5>
                 <div className="form-group d-flex flex-column align-items-center">
                   <div className="row custom-file mb-3">
-
-                    {/* IMAGE PREVIEW */}
-                    <div>
-                      {this.renderImage(this.state.photo.preview)}
-                    </div>
-                    {/* PHOTO UPLOAD */}
-                    <input type="file" name="avatar" accept="image/*" onChange={this.handlePhotoChange} />
-
-                    {/* <MulterTesting getPhoto={this.getPhoto}/> */}
-
+                    <input type="file" className="custom-file-input" id="photo" required onChange={this.handleChange} />
+                    <label className="custom-file-label" htmlFor="photo">Choose file...</label>
+                    <div className="invalid-feedback">Example invalid custom file feedback</div>
                   </div>
                 </div>
                 <div className="row justify-content-center role-section">

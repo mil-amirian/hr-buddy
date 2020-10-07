@@ -12,7 +12,7 @@ export default class App extends React.Component {
     this.state = {
       message: null,
       isLoading: true,
-      view: 'log-in',
+      view: 'add-employee',
       currentUser: null
     };
     this.setView = this.setView.bind(this);

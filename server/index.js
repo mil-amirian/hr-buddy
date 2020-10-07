@@ -6,14 +6,13 @@ const ClientError = require('./client-error');
 const staticMiddleware = require('./static-middleware');
 const sessionMiddleware = require('./session-middleware');
 
+const path = require('path');
 const multer = require('multer');
 // SET STORAGE
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './public/uploads');
-  },
+  destination: './server/public/uploads/',
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now());
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
   }
 });
 
@@ -84,43 +83,41 @@ app.get('/api/employees/:employeeId', (req, res, next) => {
 
 app.post('/api/upload', upload.single('avatar'), (req, res, next) => {
   // req.file is the `avatar` file
-  // req.body will hold the text fields, if there were any
-  // console.log(req.file);
-  // console.log(req.body);
-});
-
-app.post('/photos/upload', upload.array('photos', 12), (req, res, next) => {
-  // req.files is array of `photos` files
-  // req.body will contain the text fields, if there were any
+  // console.log('this is req.file', req.file);
+  const file = req.file;
+  if (!file) {
+    next(new ClientError('please upload a photo', 404));
+  }
+  res.json(file);
 });
 
 app.post('/api/employees', (req, res) => {
+  // console.log('req body', req.body);
   const {
     firstName, lastName, email, phone, street, city, state, zip, jobTitle, role,
     image, wage, contract, inductionDate, startDate, qualifications, departmentId
   } = req.body;
   const postInput = `
-  insert into employees ("firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle",
+  insert into employees ("employeeId","firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle",
   "role", "image" ,"wage", "contract", "inductionDate", "startDate", "qualifications", "departmentId")
-                values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)
+                values (default, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)
             returning "firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle",
             "role", "image" ,"wage", "contract", "inductionDate", "startDate", "qualifications", "departmentId"
+
+
   `;
   const values = [firstName, lastName, email, phone, street, city, state, zip, jobTitle, role,
     image, wage, contract, inductionDate, startDate, qualifications, departmentId];
 
-  if (!firstName || !lastName || !email || !phone || !street || !city || !state || !zip || !jobTitle || !role ||
-    !image || !wage || !contract || !inductionDate || !startDate || !qualifications || !departmentId) {
+  if (!firstName || !lastName || !email || !phone || !street || !city || !state || !zip || !jobTitle || !role || !wage || !contract || !inductionDate || !startDate || !qualifications || !departmentId) {
     res.status(400).json({
-      error: 'You need to add values into every input field'
+      error: 'Please fill out the entire form'
     });
   } else {
     db.query(postInput, values)
       .then(result => {
-
         res.status(201).json(result.rows[0]);
-      }
-      )
+      })
       .catch(err => {
         res.status(500).json({
           error: 'An unexpected error occurred'
