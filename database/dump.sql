@@ -168,7 +168,6 @@ COPY public.departments ("departmentId", name) FROM stdin;
 
 COPY public.employees ("employeeId", "firstName", "lastName", email, phone, street, city, state, zip, "jobTitle", role, image, wage, contract, "inductionDate", "startDate", qualifications, "departmentId") FROM stdin;
 14	Ron	Swanson	ronswanson05@gmail.com	390-221-6530	1278 Cherry Ave	Santa Barbara	CA	93219	Sales Representative	Employee	/images/ron-swanson	64	Full-time	2002-02-14	2002-02-21	Bachelors - History	1
-15	Bobby 	 Ong	bobbyone4@gmail.com	310-448-3371	7643 Hanger Lane	Torrance	CA	96413	Marketing	Employee	/images/bobby-ong	29	Full-time	2017-07-19	2017-07-28	Bachelors - Marketing 	1
 1	Michael	Park (ADMIN)	mpark211@gmail.com	213-200-6372	3599 Powder House Road	Los Angeles	CA	90001	Accountant	Admin	/images/michael-park.jpg	25	Full-time	2021-02-01	2021-04-01	CPA, Bachelors - Finance	5
 2	Roseanne	Carter (ADMIN)	rosecarter@gmail.com	714-203-5200	2426 Brown Street	Walnut Creek	CA	94596	Human Resources	Admin	/images/rose-carter.jpg	40	Full-time	2007-04-02	2007-04-10	Masters - Human Resources	2
 3	David	Phillips	davidphillips5@gmail.com	530-302-9499	577 Woodland Terrace	Sacramento	CA	95814	IT	Employee	/images/david-phillips.jpg	35	Part-time	2020-10-02	2020-10-10	Bachelors - Information Technology	6
@@ -182,6 +181,7 @@ COPY public.employees ("employeeId", "firstName", "lastName", email, phone, stre
 11	Jon	Snow (ADMIN)	snow@gmail.com	626-592-5507	2020 The Wall	Santa Monica	CA	99110	President	Admin	/images/jon-snow	45	Full-time	2001-09-05	2001-09-15	Masters - Public Administration	2
 12	Bran	Stark	branstark@yahoo.com	310-669-4389	3145 Castle Road	Long Beach	CA	90815	Research and Development	Employee	/images/bran-stark	47	Part-time	2001-09-05	2001-09-14	Masers - Biology	4
 13	Cersel	Lannister	lannistercersel@yahoo.com	559-325-1285	3067 Orange Ave	San Diego	CA	80812	Vice President	Employee	/images/cersel-lannister	32	Full-time	2003-03-10	2003-03-17	Masters - Business 	2
+15	Bobby	Ong	bobbyone4@gmail.com	310-448-3371	7643 Hanger Lane	Torrance	CA	96413	Marketing	Employee	/images/bobby-ong	29	Full-time	2017-07-19	2017-07-28	Bachelors - Marketing	1
 \.
 
 
