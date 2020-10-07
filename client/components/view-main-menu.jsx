@@ -20,8 +20,8 @@ export default function MainMenu(props) {
             <i className="menu-icon fa fa-user-plus fa-7x" />
             <h2>Add Employee</h2>
           </div>
-          <div className="menu-item col-md-5 border border-light m-2">
-            <i className="menu-icon fas fa-money-check-alt fa-7x" />
+          <div className="menu-item col-md-5 border border-light m-2"onClick={() => { props.setView('view-hours'); }}>
+            <i className="menu-icon fas fa-money-check-alt fa-7x"/>
             <h2>View Hours</h2>
           </div>
         </div>
