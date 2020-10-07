@@ -104,14 +104,10 @@ header {
 
 }
 
-
 .menu-icon {
     color: white;
 }
 
-/* .menu-item:hover .menu-icon {
-    color: black;
-} */
 
 form {
     border-radius: 15px;
@@ -139,4 +135,23 @@ form {
     border-radius: 15px;
     height: 75px;
     background-color: #EBECF0;
+}
+
+.employee-data {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.employee-data-role {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.employee-image {
+    /* border: solid rgb(123, 123, 123) 7px; */
+    border-radius: 15px;
+    width: 250px;
+    height: auto;
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
+
 }

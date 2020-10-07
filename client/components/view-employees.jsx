@@ -57,7 +57,7 @@ export default class ViewEmployees extends React.Component {
                   {
                     this.state.employees.map(employee => {
                       return (
-                        <EachEmployee firstName={employee.firstName} lastName={employee.lastName} employeeId={employee.employeeId} jobTitle={employee.jobTitle} key={employee.employeeId}/>
+                        <EachEmployee firstName={employee.firstName} lastName={employee.lastName} employeeId={employee.employeeId} jobTitle={employee.jobTitle} key={employee.employeeId} selectedUser={() => { this.props.selectedUser(employee.employeeId); }} setView={this.props.setView}/>
                       );
                     })
                   }
