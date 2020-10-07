@@ -61,7 +61,7 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <MainMenu getCurrentUser={this.getCurrentUser} />
+            <MainMenu getCurrentUser={this.getCurrentUser} setView={this.setView}/>
           </>
         );
       case 'add-employee':

@@ -7,7 +7,7 @@ main {
 }
 
 header {
-    
+
 }
 
 #home-btn {
@@ -17,7 +17,7 @@ header {
 .home-icon {
     max-width: 36px;
     max-height: fit-content;
-    
+
 }
 
 .navbar-header {
@@ -99,14 +99,9 @@ header {
     color: white;
     border-radius: 15px;
     padding: 2rem;
-<<<<<<< HEAD
-    height: 278px;
-    width: 666.53px;
-=======
     transition: 0.2s;
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
 
->>>>>>> 8f483c3cc8aa24aa163f102f66b2898b340d8a7d
 }
 
 
