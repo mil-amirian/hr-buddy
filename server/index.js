@@ -85,10 +85,11 @@ app.get('/api/employees/:employeeId', (req, res, next) => {
 app.get('/api/departments', (req, res, next) => {
   const sql = ` 
   select count ("firstName") as "Members in Department",
-      "departments"."name" as "department"
+      "departments"."name" as "department", 
+      "departments"."departmentId"
   from "employees"
   join "departments" using ("departmentId")
-  group by "departments"."name"
+  group by "departments"."name", "departments"."departmentId"
   `;
   db.query(sql)
     .then(result => {

@@ -34,6 +34,7 @@ export default class ViewDepartments extends React.Component {
       </main>
 
     );
+
   }
 
 }
