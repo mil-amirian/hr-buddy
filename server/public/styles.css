@@ -6,9 +6,18 @@ main {
     margin-top: 2rem;
 }
 
+header {
+    
+}
+
+#home-btn {
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
+}
+
 .home-icon {
     max-width: 36px;
     max-height: fit-content;
+    
 }
 
 .navbar-header {
@@ -18,6 +27,8 @@ main {
 
 #view-emp-btn {
     color: #70a2ed;
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
+
 }
 
 #view-emp-btn:hover {
@@ -34,11 +45,13 @@ main {
     background-color: #F8F9FA;
     width: fit-content;
     height: 40px;
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
+
 }
 
 .log-out {
     color: #70a2ed;
- 
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
 }
 
 .log-out:hover {
@@ -74,7 +87,11 @@ main {
 .menu-item:hover {
     cursor: pointer;
     background-color:rgba(0,0,0,0.1);
-    color: black;
+    color: white;
+    background-color: #70a2ed;
+    transform: scale(1.02);
+    box-shadow: 0 8px 6px -6px black
+
 }
 
 .menu-item {
@@ -82,17 +99,24 @@ main {
     color: white;
     border-radius: 15px;
     padding: 2rem;
+<<<<<<< HEAD
     height: 278px;
     width: 666.53px;
+=======
+    transition: 0.2s;
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
+
+>>>>>>> 8f483c3cc8aa24aa163f102f66b2898b340d8a7d
 }
+
 
 .menu-icon {
     color: white;
 }
 
-.menu-item:hover .menu-icon {
+/* .menu-item:hover .menu-icon {
     color: black;
-}
+} */
 
 form {
     border-radius: 15px;
