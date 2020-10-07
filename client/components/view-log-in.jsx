@@ -45,7 +45,11 @@ class LogIn extends React.Component {
 
   currentUser() {
     this.props.getCurrentUser(this.state.currentUser.name);
-    this.props.setView('main-menu');
+    if (this.state.currentUser.role === 'Admin') {
+      this.props.setView('main-menu');
+    } else {
+      this.props.setView('view-shifts');
+    }
   }
 
   render() {
@@ -73,7 +77,7 @@ class LogIn extends React.Component {
               </select>
             </div>
             <div className="d-flex flex-column justify-content-center mt-4">
-              <button type="button" className="btn btn-primary view" onClick={() => { this.currentUser(); }} >Login Now</button>
+              <button type="button" className="btn btn-primary view login-btn" disabled={!this.state.currentUser.name} onClick={() => { this.currentUser(); }} >Login Now</button>
             </div>
           </div>
         </div>

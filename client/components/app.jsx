@@ -4,6 +4,7 @@ import LogIn from './view-log-in';
 import ShiftsHeader from './shifts-header';
 import MainMenu from './view-main-menu';
 import AddNewEmployee from './view-add-new-employee';
+import ShiftsMenu from './view-shifts';
 import ViewEmployee from './view-employee';
 import ViewEmployees from './view-employees';
 
@@ -91,7 +92,7 @@ export default class App extends React.Component {
         return (
           <>
             {shiftsHeader}
-            <ViewEmployees getCurrentUser={this.getCurrentUser} />
+            <ShiftsMenu getCurrentUser={this.getCurrentUser} setView={this.setView}/>
           </>
         );
       case 'view-hours':
