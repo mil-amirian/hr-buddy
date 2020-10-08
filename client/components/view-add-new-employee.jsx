@@ -161,13 +161,13 @@ export default class AddNewEmployee extends React.Component {
     return (
       <div className="d-flex justify-content-center flex-column align-items-center">
         <div className="page-content col-10">
-          <div className="title d-flex justify-content-between">
+          <div className="shadow title d-flex justify-content-between">
             <button className="col-1 back-btn btn btn-primary ml-3" onClick={() => { this.props.setView('main-menu'); }}>BACK</button>
             <h2 className="col-10 page-title text-center">ADD NEW EMPLOYEE</h2>
             <span className="col-1"></span>
           </div>
         </div>
-        <form className="col-10 d-flex flex-column align-items-center" onSubmit={this.handleSubmit}>
+        <form className="col-10 shadow d-flex flex-column align-items-center" onSubmit={this.handleSubmit}>
           <div className="col-11 d-flex flex-column align-items-left section-styling-head">
             <h5 className="row ml-3 mt-1">NAME & JOB TITLE</h5>
             <div className="form-group d-flex justify-content-between ml-1">

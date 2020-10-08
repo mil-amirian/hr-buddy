@@ -166,14 +166,14 @@ app.delete('/api/employees/:employeeId', (req, res) => {
 });
 
 // Hours and PAY for all Departments
-app.get('/api/hours/', (req, res) => {
+app.get('/api/hours', (req, res) => {
   const sql = `
   select SUM(EXTRACT(EPOCH FROM ("s"."clockOut" -"s"."clockIn" ))/3600) as "totalHours",
        avg("e"."wage") as "avgWage",
        SUM(EXTRACT(EPOCH FROM ("s"."clockOut" -"s"."clockIn" ))/3600) * avg("e"."wage") as "totalPay"
 from "shifts" as "s"
 join "employees" as "e" using ("employeeId")
-where "clockOut" not null
+where "clockOut" IS NOT null
   `;
   db.query(sql)
     .then(result => {
