@@ -6,9 +6,6 @@ main {
     margin-top: 2rem;
 }
 
-header {
-
-}
 
 #home-btn {
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
@@ -168,17 +165,19 @@ form {
 }
 
 .hours-container {
-    height: 400px;
+    margin-bottom: 3rem;
+    height: 500px;
     border-radius: 15px;
     padding: 2rem 2rem;
     background-color: #EBECF0;
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123);
+
 }
 
 .image-prev {
     border-radius: 15px;
     width: 20vw;
     box-shadow: 0 8px 6px -6px black
-
 } 
 
 .bubble { 
@@ -191,11 +190,25 @@ form {
      height: 225px;
 }
 
+.shadow {
+    box-shadow: 0 8px 6px -6px rgb(123, 123, 123);
+
+}
+
+
 .department-qty {
+    font-size: 30px;
+}
+
+.dep-qty {
     font-size: 54px;
 }
 
 .view-buttons {
     width: 85px;
+}
+
+.page-title {
+    /* font-weight: 600; */
 }
 
