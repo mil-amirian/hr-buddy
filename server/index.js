@@ -8,7 +8,7 @@ const sessionMiddleware = require('./session-middleware');
 
 const path = require('path');
 const multer = require('multer');
-// SET STORAGE
+
 const storage = multer.diskStorage({
   destination: './server/public/uploads/',
   filename: function (req, file, cb) {
@@ -98,8 +98,6 @@ app.get('/api/departments', (req, res, next) => {
 });
 
 app.post('/api/upload', upload.single('avatar'), (req, res, next) => {
-  // req.file is the `avatar` file
-  // console.log('this is req.file', req.file);
   const file = req.file;
   if (!file) {
     next(new ClientError('please upload a photo', 404));
@@ -108,7 +106,6 @@ app.post('/api/upload', upload.single('avatar'), (req, res, next) => {
 });
 
 app.post('/api/employees', (req, res) => {
-  // console.log('req body', req.body);
   const {
     firstName, lastName, email, phone, street, city, state, zip, jobTitle, role,
     image, wage, contract, inductionDate, startDate, qualifications, departmentId
@@ -124,7 +121,7 @@ app.post('/api/employees', (req, res) => {
   const values = [firstName, lastName, email, phone, street, city, state, zip, jobTitle, role,
     image, wage, contract, inductionDate, startDate, qualifications, departmentId];
 
-  if (!firstName || !lastName || !email || !phone || !street || !city || !state || !zip || !jobTitle || !role || !wage || !contract || !inductionDate || !startDate || !qualifications || !departmentId) {
+  if (values.every(v => !v)) {
     res.status(400).json({
       error: 'Please fill out the entire form'
     });
