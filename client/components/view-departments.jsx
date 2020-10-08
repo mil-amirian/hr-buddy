@@ -37,13 +37,13 @@ export default class ViewDepartments extends React.Component {
               </div>
             </div>
           </main>
-          <div className="row d-flex align-items-center justify-content-center">
-            <div className="col-11 d-flex justify-content-center">
+          <div className="">
+            <div className="col d-flex justify-content-center">
               <div className="row d-flex flex-wrap flex-row justify-content-center">
                 {
                   this.state.departments.map(department => {
                     return (
-                      <div key={department.departmentId} className='department-box m-3'>
+                      <div key={department.departmentId} className='department-box m-1'>
                         <div className="">
                           <div className="bubble">
                             <h4 > {department.department} Department</h4>

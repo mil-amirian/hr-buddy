@@ -6,9 +6,6 @@ main {
     margin-top: 2rem;
 }
 
-header {
-
-}
 
 #home-btn {
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
@@ -209,5 +206,9 @@ form {
 
 .view-buttons {
     width: 85px;
+}
+
+.page-title {
+    /* font-weight: 600; */
 }
 
