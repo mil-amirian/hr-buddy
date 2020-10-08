@@ -8,11 +8,11 @@ export default class ViewEmployees extends React.Component {
       employees: null
     };
     this.getEmployees = this.getEmployees.bind(this);
+    this.deleteEmployee = this.deleteEmployee.bind(this);
   }
 
   componentDidMount() {
     this.getEmployees();
-
   }
 
   getEmployees() {
@@ -23,7 +23,21 @@ export default class ViewEmployees extends React.Component {
           employees: employees
         }));
       });
+  }
 
+  deleteEmployee(employeeId) {
+    const index = this.state.employees.findIndex(employee => employee.employeeId === employeeId);
+    fetch(`/api/employees/${employeeId}`, {
+      method: 'DELETE'
+    })
+      .then(response => {
+        const updatedEmployees = this.state.employees.slice();
+        updatedEmployees.splice(index, 1);
+        this.setState({ employees: updatedEmployees });
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   render() {
@@ -57,7 +71,7 @@ export default class ViewEmployees extends React.Component {
                   {
                     this.state.employees.map(employee => {
                       return (
-                        <EachEmployee firstName={employee.firstName} lastName={employee.lastName} employeeId={employee.employeeId} jobTitle={employee.jobTitle} key={employee.employeeId} selectedUser={() => { this.props.selectedUser(employee.employeeId); }} setView={this.props.setView}/>
+                        <EachEmployee firstName={employee.firstName} lastName={employee.lastName} employeeId={employee.employeeId} jobTitle={employee.jobTitle} key={employee.employeeId} selectedUser={() => { this.props.selectedUser(employee.employeeId); }} setView={this.props.setView} deleteEmployee={this.deleteEmployee}/>
                       );
                     })
                   }
