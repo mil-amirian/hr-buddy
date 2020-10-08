@@ -165,6 +165,97 @@ app.delete('/api/employees/:employeeId', (req, res) => {
     });
 });
 
+// Hours and PAY for all Departments
+app.get('/api/hours/', (req, res) => {
+  const sql = `
+  select SUM(EXTRACT(EPOCH FROM ("s"."clockOut" -"s"."clockIn" ))/3600) as "totalHours",
+       avg("e"."wage") as "avgWage",
+       SUM(EXTRACT(EPOCH FROM ("s"."clockOut" -"s"."clockIn" ))/3600) * avg("e"."wage") as "totalPay"
+from "shifts" as "s"
+join "employees" as "e" using ("employeeId")
+where "clockOut" not null
+  `;
+  db.query(sql)
+    .then(result => {
+      res.json(result.rows[0]);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
+});
+
+// Hours per employee
+app.get('/api/hours/emp/:employeeId', (req, res) => {
+  const employeeId = parseInt(req.params.employeeId, 10);
+  const sql = `
+  select "employeeId", "departmentId", "name" as "department",
+       SUM(EXTRACT(EPOCH FROM ("s"."clockOut" -"s"."clockIn" ))/3600) as "totalHours",
+       avg("e"."wage") as "wage",
+       SUM(EXTRACT(EPOCH FROM ("s"."clockOut" -"s"."clockIn" ))/3600) * avg("e"."wage") as "totalPay"
+from "shifts" as "s"
+join "employees" as "e" using ("employeeId")
+join "departments" using ("departmentId")
+where "employeeId" = $1
+group by "employeeId", "departmentId", "name"
+  `;
+
+  const value = [employeeId];
+  db.query(sql, value)
+    .then(result => {
+      if (result.rows[0]) {
+        res.json(result.rows[0]);
+      } else {
+        res.status(404).json({
+          error: `Cannot find employee with id ${employeeId}`
+        });
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
+});
+
+// Hours per department
+app.get('/api/hours/dept/:departmentId', (req, res) => {
+  const departmentId = parseInt(req.params.departmentId, 10);
+  const sql = `
+  select "departmentId", "name" as "department",
+       SUM(EXTRACT(EPOCH FROM ("s"."clockOut" -"s"."clockIn" ))/3600) as "totalHours",
+       avg("e"."wage") as "wage",
+       SUM(EXTRACT(EPOCH FROM ("s"."clockOut" -"s"."clockIn" ))/3600) * avg("e"."wage") as "totalPay"
+from "employees" as "e"
+join "shifts" as "s" using ("employeeId")
+join "departments" using ("departmentId")
+where "departmentId" = $1
+and "departmentId" IS NOT NULL
+group by "departmentId", "name"
+  `;
+
+  const value = [departmentId];
+  db.query(sql, value)
+    .then(result => {
+      if (result.rows[0]) {
+        res.json(result.rows[0]);
+      } else {
+        res.status(404).json({
+          error: `Cannot find department with id ${departmentId}`
+        });
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
