@@ -101,7 +101,7 @@ export default class Hours extends React.Component {
                 <path fillRule="evenodd" d="M15 5H1v8h14V5zM1 4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H1z"/>
                 <path d="M13 5a2 2 0 0 0 2 2V5h-2zM3 5a2 2 0 0 1-2 2V5h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 13a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
               </svg>
-                      ${parseFloat(this.state.selectedDepartment.totalPay).toFixed(2).toLocaleString('en')}</span>
+                      ${parseFloat((this.state.selectedDepartment.totalPay).toFixed(2)).toLocaleString('en')}</span>
           </div>
           <div>
             <h5 className="mt-4">PAY ratio for TEAM</h5>
@@ -153,7 +153,7 @@ export default class Hours extends React.Component {
                 <path fillRule="evenodd" d="M15 5H1v8h14V5zM1 4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H1z"/>
                 <path d="M13 5a2 2 0 0 0 2 2V5h-2zM3 5a2 2 0 0 1-2 2V5h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 13a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
               </svg>
-                ${parseFloat(this.state.selectedEmployee.totalPay).toFixed(2).toLocaleString('en')}
+                ${parseFloat((this.state.selectedEmployee.totalPay).toFixed(2)).toLocaleString('en')}
             </span>
           </div>
           <div>
@@ -226,7 +226,7 @@ export default class Hours extends React.Component {
                     <path fillRule="evenodd" d="M15 5H1v8h14V5zM1 4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H1z"/>
                     <path d="M13 5a2 2 0 0 0 2 2V5h-2zM3 5a2 2 0 0 1-2 2V5h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 13a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
                   </svg>
-                    ${parseFloat(this.state.allHours.totalPay).toLocaleString('en')} for all employees
+                    ${parseFloat((this.state.allHours.totalPay).toFixed(2)).toLocaleString('en')} for all employees
                 </span>
               </div>
             </div>
