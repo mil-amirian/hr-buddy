@@ -121,17 +121,12 @@ export default class AddNewEmployee extends React.Component {
         return response.json();
       })
       .then(data => {
-        // console.log('data', data);
-        // console.log('data.filename', data.filename);
-        // console.log('data.path', data.path);
         this.setState({
           image: '/uploads/' + data.filename
         });
-        // alert('The file is successfully uploaded');
       })
       .then(() => {
         const employee = Object.assign({}, this.state);
-        // console.log('employee', employee);
         fetch('/api/employees', {
           method: 'POST',
           headers: {
@@ -143,22 +138,9 @@ export default class AddNewEmployee extends React.Component {
       .catch(error => {
         console.error(error);
       });
-    // const employee = Object.assign({}, this.state);
-
-    // fetch('/api/employees', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(employee)
-    // }).catch(error => {
-    //   console.error(error);
-    // });
-
   }
 
   handlePhotoChange(event) {
-    // console.log(event.target.files[0]);
     this.setState({
       photo: {
         file: event.target.files[0],
@@ -169,8 +151,8 @@ export default class AddNewEmployee extends React.Component {
 
   renderImage(preview) {
     return (
-      <div className="d-flex justify-content-center mb-4 s8 offset-s2 center">
-        {preview && <img src={preview} style={{ maxWidth: '100%' }} className="mb-4" alt="Uploaded image preview" />}
+      <div className="">
+        {preview && <img src={preview} style={{ maxWidth: '100%' }} className="mb-4 image-prev" alt="Uploaded image preview" />}
       </div>
     );
   }
@@ -334,18 +316,13 @@ export default class AddNewEmployee extends React.Component {
             <div className="col d-flex mt-3 section-styling">
               <div className="col-12 d-flex flex-column align-items-left justify-content-between">
                 <h5 className="ml-1 mt-1">EMPLOYEE PHOTO & ROLE</h5>
-                <div className="form-group d-flex flex-column align-items-center">
-                  <div className="row custom-file mb-3">
-
-                    {/* IMAGE PREVIEW */}
-                    <div>
-                      {this.renderImage(this.state.photo.preview)}
-                    </div>
-                    {/* PHOTO UPLOAD */}
-                    <input type="file" name="avatar" accept="image/*" onChange={this.handlePhotoChange} />
-
-                    {/* <MulterTesting getPhoto={this.getPhoto}/> */}
-
+                <div className="row form-group d-flex flex-column align-items-center">
+                  <div className="d-flex justify-content-center">
+                    {this.renderImage(this.state.photo.preview)}
+                  </div>
+                  <div className="custom-file">
+                    <input type="file" className="custom-file-input" id="customFile" name="avatar" accept="image/*" onChange={this.handlePhotoChange}/>
+                    <label className="custom-file-label" htmlFor="customFile">Choose file</label>
                   </div>
                 </div>
                 <div className="row justify-content-center role-section">
