@@ -255,6 +255,25 @@ group by "departmentId", "name"
     });
 });
 
+app.post('/api/shifts/clockIn', (req, res) => {
+  const employeeId = parseInt(req.body.employeeId, 10);
+  const sql = ` 
+  insert into "shifts" ("employeeId", "clockIn") 
+  values ($1, now())
+  returning *
+  `;
+  const value = [employeeId];
+  db.query(sql, value)
+    .then(result => {
+      res.status(201).json(result.rows[0]);
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: 'An unexpected error occurred'
+      });
+      console.error(err);
+
+    
 app.put('/api/shifts/clockOut', (req, res) => {
   const sql = `
   update "shifts"
