@@ -125,7 +125,7 @@ export default class AddNewEmployee extends React.Component {
         // console.log('data.filename', data.filename);
         // console.log('data.path', data.path);
         this.setState({
-          image: '/upload/' + data.filename
+          image: '/uploads/' + data.filename
         });
         // alert('The file is successfully uploaded');
       })

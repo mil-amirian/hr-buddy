@@ -82,9 +82,9 @@ app.get('/api/employees/:employeeId', (req, res, next) => {
 });
 
 app.get('/api/departments', (req, res, next) => {
-  const sql = ` 
+  const sql = `
   select count ("firstName") as "Members in Department",
-      "departments"."name" as "department", 
+      "departments"."name" as "department",
       "departments"."departmentId"
   from "employees"
   join "departments" using ("departmentId")
@@ -114,12 +114,11 @@ app.post('/api/employees', (req, res) => {
     image, wage, contract, inductionDate, startDate, qualifications, departmentId
   } = req.body;
   const postInput = `
-  insert into employees ("employeeId","firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle",
-  "role", "image" ,"wage", "contract", "inductionDate", "startDate", "qualifications", "departmentId")
-                values (default, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)
-            returning "firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle",
+  insert into employees ("firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle",
+            "role", "image" ,"wage", "contract", "inductionDate", "startDate", "qualifications", "departmentId")
+  values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)
+  returning "firstName", "lastName", "email", "phone", "street", "city", "state", "zip", "jobTitle",
             "role", "image" ,"wage", "contract", "inductionDate", "startDate", "qualifications", "departmentId"
-
 
   `;
   const values = [firstName, lastName, email, phone, street, city, state, zip, jobTitle, role,
