@@ -16,7 +16,7 @@ export default class App extends React.Component {
     this.state = {
       message: null,
       isLoading: true,
-      view: 'log-in',
+      view: 'log-in', // 'log-in'
       currentUser: null,
       employeeToView: null
     };
@@ -109,7 +109,6 @@ export default class App extends React.Component {
           <>
             {header}
             <ViewDepartments/>
-            {/* <GetEmployees getCurrentUser={this.getCurrentUser}/> */}
           </>
         );
     }
