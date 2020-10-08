@@ -186,7 +186,12 @@ form {
     border-radius: 15px;
     padding: 2rem; 
      margin: 1rem;
-     box-shadow: 2px 2px 4px rgb(65, 63, 63);
+     box-shadow: 0 8px 6px -6px rgb(123, 123, 123);
+     width: 200px;
+     height: 225px;
+}
 
+.department-qty {
+    font-size: 54px;
 }
 
