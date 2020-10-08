@@ -227,7 +227,7 @@ app.get('/api/hours/dept/:departmentId', (req, res) => {
   const sql = `
   select "departmentId", "name" as "department",
        SUM(EXTRACT(EPOCH FROM ("s"."clockOut" -"s"."clockIn" ))/3600) as "totalHours",
-       avg("e"."wage") as "wage",
+       avg("e"."wage") as "avgWage",
        SUM(EXTRACT(EPOCH FROM ("s"."clockOut" -"s"."clockIn" ))/3600) * avg("e"."wage") as "totalPay"
 from "employees" as "e"
 join "shifts" as "s" using ("employeeId")
@@ -236,7 +236,6 @@ where "departmentId" = $1
 and "departmentId" IS NOT NULL
 group by "departmentId", "name"
   `;
-
   const value = [departmentId];
   db.query(sql, value)
     .then(result => {
@@ -247,6 +246,26 @@ group by "departmentId", "name"
           error: `Cannot find department with id ${departmentId}`
         });
       }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
+});
+
+app.put('/api/shifts/clockOut', (req, res) => {
+  const sql = `
+  update "shifts"
+  set "clockOut" = now()
+  where "shiftId" = $1
+  returning *
+  `;
+  const val = [parseInt(req.body.shiftId, 10)];
+  db.query(sql, val)
+    .then(result => {
+      res.json(result.rows[0]);
     })
     .catch(err => {
       console.error(err);
