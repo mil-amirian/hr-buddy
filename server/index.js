@@ -165,7 +165,6 @@ app.delete('/api/employees/:employeeId', (req, res) => {
     });
 });
 
-// Hours and PAY for all Departments
 app.get('/api/hours', (req, res) => {
   const sql = `
   select SUM(EXTRACT(EPOCH FROM ("s"."clockOut" -"s"."clockIn" ))/3600) as "totalHours",
@@ -187,7 +186,6 @@ where "clockOut" IS NOT null
     });
 });
 
-// Hours per employee
 app.get('/api/hours/emp/:employeeId', (req, res) => {
   const employeeId = parseInt(req.params.employeeId, 10);
   const sql = `
@@ -221,7 +219,6 @@ group by "employeeId", "departmentId", "name"
     });
 });
 
-// Hours per department
 app.get('/api/hours/dept/:departmentId', (req, res) => {
   const departmentId = parseInt(req.params.departmentId, 10);
   const sql = `
@@ -257,8 +254,8 @@ group by "departmentId", "name"
 
 app.post('/api/shifts/clockIn', (req, res) => {
   const employeeId = parseInt(req.body.employeeId, 10);
-  const sql = ` 
-  insert into "shifts" ("employeeId", "clockIn") 
+  const sql = `
+  insert into "shifts" ("employeeId", "clockIn")
   values ($1, now())
   returning *
   `;
@@ -272,8 +269,9 @@ app.post('/api/shifts/clockIn', (req, res) => {
         error: 'An unexpected error occurred'
       });
       console.error(err);
+    });
+});
 
-    
 app.put('/api/shifts/clockOut', (req, res) => {
   const sql = `
   update "shifts"
