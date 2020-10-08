@@ -10,7 +10,7 @@ export default function MainMenu(props) {
             <i className="menu-icon fas fa-address-card fa-7x"/>
             <h2>View Employees</h2>
           </div>
-          <div className="menu-item col-md-5 border border-light m-4">
+          <div className="menu-item col-md-5 border border-light m-4" onClick={() => { props.setView('view-departments'); }}>
             <i className="menu-icon fas fa-users fa-7x"/>
             <h2>View Departments</h2>
           </div>

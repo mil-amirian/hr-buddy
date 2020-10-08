@@ -109,7 +109,6 @@ export default class App extends React.Component {
           <>
             {header}
             <ViewDepartments/>
-            {/* <GetEmployees getCurrentUser={this.getCurrentUser}/> */}
           </>
         );
     }

@@ -83,7 +83,7 @@ app.get('/api/employees/:employeeId', (req, res, next) => {
 
 app.get('/api/departments', (req, res, next) => {
   const sql = `
-  select count ("firstName") as "Members in Department",
+  select count ("firstName") as "numbersOfPeople",
       "departments"."name" as "department",
       "departments"."departmentId"
   from "employees"
