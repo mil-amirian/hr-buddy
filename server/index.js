@@ -256,6 +256,27 @@ group by "departmentId", "name"
     });
 });
 
+// api/shifts/clockIn
+app.post('/api/shifts/clockIn/:employeeId', (req, res) => {
+  const employeeId = parseInt(req.params.employeeId, 10);
+  const sql = ` 
+  insert into "shifts" ("employeeId", "clockIn") 
+  values ($1, now())
+  returning *
+  `;
+  const value = [employeeId];
+  db.query(sql, value)
+    .then(result => {
+      res.status(201).json(result.rows[0]);
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: 'An unexpected error occurred'
+      });
+      console.error(err);
+    });
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
