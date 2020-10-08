@@ -113,6 +113,10 @@ header {
     color: white;
 }
 
+.clock-in-button,
+.clock-out-button {
+    width: 500px;
+}
 
 form {
     border-radius: 15px;
