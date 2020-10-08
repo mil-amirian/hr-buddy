@@ -60,7 +60,7 @@ class LogIn extends React.Component {
           <div className="row">
             <img className="d-flex justify-content-lg-center align-items-center" src="./images/hr-buddy-logo.png"></img>
           </div>
-          <div className="row d-flex flex-column justify-content-center mt-4">
+          <div className="row d-flex flex-column justify-content-center mt-5">
             <h2>Login to your account</h2>
             <div className="input-group mt-4">
               <div className="input-group-prepend">

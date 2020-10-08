@@ -47,7 +47,7 @@ export default class ViewEmployees extends React.Component {
         return (
           <main className="d-flex justify-content-center mb-4">
             <div className="page-content col-10">
-              <div className="title d-flex justify-content-center">
+              <div className="shadow title d-flex justify-content-center">
                 <h2 className="page-title">VIEW EMPLOYEES</h2>
               </div>
               <div className="table-container">
@@ -59,7 +59,7 @@ export default class ViewEmployees extends React.Component {
                                       Add Employee
                   </button>
                 </div>
-                <table className="table table-striped mb-4 border rounded">
+                <table className="shadow table table-striped mb-4 border rounded">
                   <thead className="alert alert-dark table-headers">
                     <tr>
                       <th scope="col">Employee ID</th>
