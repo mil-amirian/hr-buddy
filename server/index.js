@@ -139,6 +139,32 @@ app.post('/api/employees', (req, res) => {
   }
 });
 
+app.delete('/api/employees/:employeeId', (req, res) => {
+  const employeeId = parseInt(req.params.employeeId, 10);
+  const sql = `
+    delete from "employees"
+    where "employeeId" = $1
+    returning *
+  `;
+  const value = [employeeId];
+  db.query(sql, value)
+    .then(result => {
+      if (result.rows[0]) {
+        res.status(204).send(result.rows[0]);
+      } else {
+        res.status(404).json({
+          error: `Cannot find employee with id ${employeeId}`
+        });
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
