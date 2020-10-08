@@ -36,8 +36,6 @@ export default class Hours extends React.Component {
     fetch('/api/departments')
       .then(res => res.json())
       .then(departments => {
-        // eslint-disable-next-line no-console
-        console.log(departments);
         this.setState(state => ({
           departments: departments
         }));
@@ -45,7 +43,7 @@ export default class Hours extends React.Component {
   }
 
   render() {
-    if (this.state.employees) {
+    if (this.state.employees && this.state.departments) {
       return (
         <div className="d-flex justify-content-center flex-column align-items-center">
           <div className="page-content col-10">
@@ -65,32 +63,75 @@ export default class Hours extends React.Component {
               </div>
             </div>
             <div className="d-flex justify-content-around">
-              <div className="mt-4">
-                <label htmlFor="exampleFormControlInput1">Departments</label>
-                <select className="custom-select" id="employee-select" onChange={this.handleChange}>
-                  <option value="default">--select--</option>
-                  {this.state.employees.map(employee => {
-                    return (
-                      <option key={employee.employeeId}>{employee.firstName} {employee.lastName}</option>
-                    );
-                  })
-                  }
-                </select>
+              <div className="col">
+                <div className="mt-4 d-flex align-items-center">
+                  <i className="menu-icon-teams fas fa-users fa-3x mr-4"/>
+                  <div>
+                    <label htmlFor="exampleFormControlInput1">Departments</label>
+                    <select className="custom-select" id="employee-select" onChange={this.handleChange}>
+                      <option value="default">--select--</option>
+                      {this.state.departments.map(department => {
+                        return (
+                          <option key={department.departmentId}>{department.department}</option>
+                        );
+                      })
+                      }
+                    </select>
+                  </div>
+                </div>
+                <div className="hours-container d-flex flex-column justify-content-around mt-5">
+                  <div>
+                    <h5>HOURS total for TEAM</h5>
+                    <span>CalcHOURS Hrs.</span>
+                  </div>
+                  <div>
+                    <h5 className="mt-4">PAY total for TEAM</h5>
+                    <span>$ CalcPAY</span>
+                  </div>
+                  <div>
+                    <h5 className="mt-4">PAY ratio for TEAM</h5>
+                    <span>Ratio %</span>
+                  </div>
+                </div>
               </div>
-              <div className="mt-4">
-                <label htmlFor="exampleFormControlInput1">Employees</label>
-                <select className="custom-select" id="employee-select" onChange={this.handleChange}>
-                  <option value="default">--select--</option>
-                  {this.state.employees.map(employee => {
-                    return (
-                      <option key={employee.employeeId}>{employee.firstName} {employee.lastName}</option>
-                    );
-                  })
-                  }
-                </select>
-              </div>
-            </div>
 
+              <div className="col">
+                <div className="mt-4 d-flex align-items-center">
+                  <i className="menu-icon-emp fa fa-user fa-3x mr-4" />
+                  <div>
+                    <label htmlFor="exampleFormControlInput1">Employees</label>
+                    <select className="custom-select" id="employee-select" onChange={this.handleChange}>
+                      <option value="default">--select--</option>
+                      {this.state.employees.map(employee => {
+                        return (
+                          <option key={employee.employeeId}>{employee.firstName} {employee.lastName}</option>
+                        );
+                      })
+                      }
+                    </select>
+                  </div>
+                </div>
+                <div className="hours-container d-flex flex-column justify-content-around mt-5">
+                  <div>
+                    <h5>HOURS total for EMPLOYEE</h5>
+                    <span>CalcHOURS Hrs.</span>
+                  </div>
+                  <div>
+                    <h5 className="mt-4">PAY total for EMPLOYEE</h5>
+                    <span>$ CalcPAY</span>
+                  </div>
+                  <div>
+                    <h5 className="mt-4">EMPLOYEE is part of team</h5>
+                    <span>Employee Team Name</span>
+                  </div>
+                  <div>
+                    <h5 className="mt-4">EMPLOYEE pay ratio of team</h5>
+                    <span>Ratio %</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       );
