@@ -54,7 +54,6 @@ export default class App extends React.Component {
   render() {
     const header = <Header user={this.state.currentUser} logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
     const shiftsHeader = <ShiftsHeader user={this.state.currentUser} logout={this.setView} employees={this.setView} mainMenu={this.setView} />;
-
     switch (this.state.view) {
       case 'log-in':
         return (
@@ -94,7 +93,7 @@ export default class App extends React.Component {
         return (
           <>
             {shiftsHeader}
-            <ShiftsMenu getCurrentUser={this.getCurrentUser} setView={this.setView}/>
+            <ShiftsMenu getCurrentUser={this.getCurrentUser} employeeId={this.state.currentUser.employeeId} setView={this.setView}/>
           </>
         );
       case 'view-hours':
