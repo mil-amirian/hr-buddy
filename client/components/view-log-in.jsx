@@ -71,9 +71,11 @@ class LogIn extends React.Component {
               <select className="custom-select" id="employee-select" onChange={this.handleChange}>
                 <option value="default">--select--</option>
                 {this.state.employees.map(employee => {
-                  return (
-                    <option key={employee.employeeId}>{employee.firstName} {employee.lastName}</option>
-                  );
+                  if (employee.firstName === 'Ron' || employee.firstName === 'Roseanne') {
+                    return (
+                      <option key={employee.employeeId}>{employee.firstName} {employee.lastName}</option>
+                    );
+                  }
                 })
                 }
               </select>
