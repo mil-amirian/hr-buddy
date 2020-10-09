@@ -195,6 +195,11 @@ form {
 
 }
 
+.menu-spacer {
+    height: 15vh;
+
+}
+
 
 .department-qty {
     font-size: 30px;
