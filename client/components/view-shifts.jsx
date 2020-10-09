@@ -65,7 +65,7 @@ class ShiftsMenu extends React.Component {
     if (!this.state.isClockedIn && !this.state.shiftId) {
       return (
         <>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center mb-4">
             <div className="shifts-container shadow col-8 p-5 d-flex justify-content-center align-items-center flex-column p-2 mt-4">
               <div className="">
                 <button type="button" className="btn btn-success mt-4 clock-in-button align-items-center" onClick={this.getClockIn}>
@@ -76,7 +76,7 @@ class ShiftsMenu extends React.Component {
                   Clock In</button>
               </div>
               <div className="clock-in-container col-6 row d-flex flex-column p-2 mt-2 align-middle">
-                <h4 id="clock-in-text">You are currently not clocked in</h4>
+                <h4 className="text-center" id="clock-in-text">You are currently not clocked in</h4>
               </div>
               <div className="">
                 <button type="button" className="btn btn-danger mt-4 clock-out-button" onClick={this.getClockOut} disabled={true}>
@@ -87,7 +87,7 @@ class ShiftsMenu extends React.Component {
                   Clock Out</button>
               </div>
               <div className="clock-in-container col-6 row d-flex flex-column p-2 mt-2 align-middle">
-                <h4 id="clock-out-text">You are currently clocked out</h4>
+                <h4 className="text-center" id="clock-out-text">You are currently clocked out</h4>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ class ShiftsMenu extends React.Component {
     } else if (this.state.isClockedIn) {
       return (
         <>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center mb-4">
             <div className="shifts-container shadow col-8 p-5 d-flex justify-content-center align-items-center flex-column p-2 mt-4">
               <div className="">
                 <button type="button" className="btn btn-success mt-4 clock-in-button align-items-center" onClick={this.getClockIn} disabled={true}>
@@ -107,7 +107,8 @@ class ShiftsMenu extends React.Component {
                   Clock In</button>
               </div>
               <div className="clock-in-container col-6 row d-flex flex-column p-2 mt-2 align-middle">
-                <h4 id="clock-in-text">You clocked in at {clockInTimeUTC}</h4>
+                <h2 className="text-center" id="clock-in-text">You clocked in at:</h2>
+                <h4 className="text-center" id="clock-in-text">{clockInTimeUTC}</h4>
               </div>
               <div className="">
                 <button type="button" className="btn btn-danger mt-4 clock-out-button" onClick={this.getClockOut}>
@@ -118,7 +119,7 @@ class ShiftsMenu extends React.Component {
                   Clock Out</button>
               </div>
               <div className="clock-in-container col-6 row d-flex flex-column p-2 mt-2 align-middle">
-                <h4 id="clock-out-text">You are currently clocked out</h4>
+                <h4 className="text-center" id="clock-out-text">You are currently clocked out</h4>
               </div>
             </div>
           </div>
@@ -127,7 +128,7 @@ class ShiftsMenu extends React.Component {
     } else if (this.state.clockIn && this.state.clockOut) {
       return (
         <>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center mb-4">
             <div className="shifts-container shadow col-8 p-5 d-flex justify-content-center align-items-center flex-column p-2 mt-4">
               <div className="">
                 <button type="button" className="btn btn-success mt-4 clock-in-button align-items-center" onClick={this.getClockIn}>
@@ -138,7 +139,9 @@ class ShiftsMenu extends React.Component {
                   Clock In</button>
               </div>
               <div className="clock-in-container col-6 row d-flex flex-column p-2 mt-2 align-middle">
-                <h4 id="clock-in-text">You clocked in at {clockInTimeUTC}</h4>
+                <h2 className="text-center" id="clock-in-text">You clocked in at:</h2>
+                <h4 className="text-center" id="clock-in-text">{clockInTimeUTC}</h4>
+
               </div>
               <div className="">
                 <button type="button" className="btn btn-danger mt-4 clock-out-button" onClick={this.getClockOut} disabled={true}>
@@ -149,7 +152,8 @@ class ShiftsMenu extends React.Component {
                   Clock Out</button>
               </div>
               <div className="clock-in-container col-6 row d-flex flex-column p-2 mt-2 align-middle">
-                <h4 id="clock-out-text">You clocked out at {clockOutTimeUTC}</h4>
+                <h2 className="text-center" id="clock-out-text">You clocked out at: </h2>
+                <h4 className="text-center" id="clock-out-text">{clockOutTimeUTC}</h4>
               </div>
             </div>
           </div>
