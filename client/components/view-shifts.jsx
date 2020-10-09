@@ -4,68 +4,54 @@ class ShiftsMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      shiftId: null,
+      isClockedIn: false,
       clockIn: null,
       clockOut: null,
-      shiftId: null
+      employeeId: this.props.employeeId
     };
     this.getClockOut = this.getClockOut.bind(this);
     this.getClockIn = this.getClockIn.bind(this);
-    this.shiftStatus = this.shiftStatus.bind(this);
   }
 
-  componentDidMount() {
-    this.getClockIn();
-    this.getClockOut();
-    this.shiftStatus();
-  }
-
-  shiftStatus() {
-    fetch('api/shifts/shiftstatus')
-      .then(res => res.json())
-      .then(time => {
-        if (time.shiftId) {
-          this.setState({
-            shiftId: time.shiftId,
-            clockIn: time.clockIn
-          });
-        }
-      }
-      );
-  }
-
-  getClockIn(clockIn) {
+  getClockIn() {
     const post = {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify(clockIn)
+      body: JSON.stringify({
+        employeeId: this.state.employeeId
+      })
     };
     fetch('/api/shifts/clockIn', post)
       .then(res => res.json())
       .then(time => {
-        this.setState({
-          clockIn: time.clockIn,
-          shiftId: time.shiftId
-        });
+        // this.setState({
+        //   isClockedIn: true,
+        //   shiftId: time.shiftId,
+        //   clockIn: time.clockIn,
+        //   clockOut: null
+        // });
       });
   }
 
-  getClockOut(clockOut) {
+  getClockOut() {
     const post = {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify(clockOut)
+      body: JSON.stringify(this.state.shiftId)
     };
     fetch('/api/shifts/clockOut', post)
       .then(res => res.json())
       .then(time => {
         this.setState(state => ({
+          isClockedin: false,
+          shiftId: null,
           clockIn: time.clockIn,
-          clockOut: time.clockOut,
-          shiftId: time.shiftId
+          clockOut: time.clockOut
         }));
       });
   }
@@ -73,7 +59,7 @@ class ShiftsMenu extends React.Component {
   render() {
     const currentTime = new Date();
     const formattedTime = currentTime.toString().slice(0, 24);
-    if (!this.state.clockIn && !this.state.clockOut) {
+    if (!this.state.isClockedIn && !this.state.shiftId) {
       return (
         <>
           <div className="d-flex justify-content-center">
@@ -104,10 +90,9 @@ class ShiftsMenu extends React.Component {
           </div>
         </>
       );
-    } else if (this.state.clockIn && !this.state.clockOut) {
+    } else if (this.state.isClockedIn) {
       return (
         <>
-
           <div className="d-flex justify-content-center">
             <div className="shifts-container shadow col-8 p-5 d-flex justify-content-center align-items-center flex-column p-2 mt-4">
               <div className="">
@@ -139,7 +124,6 @@ class ShiftsMenu extends React.Component {
     } else if (this.state.clockIn && this.state.clockOut) {
       return (
         <>
-
           <div className="d-flex justify-content-center">
             <div className="shifts-container shadow col-8 p-5 d-flex justify-content-center align-items-center flex-column p-2 mt-4">
               <div className="">
