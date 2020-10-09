@@ -17,7 +17,7 @@ export default function Header(props) {
           </div>
           <div className="btn-log-out d-flex align-items-center" role="group" aria-label="second group">
             <span className="mr-2 current-user">
-              <h5 id="user-name" className="my-auto">{props.user}<span id="user-status" className="badge badge-pill badge-danger ml-1 ml-2">ADMIN</span></h5>
+              <h5 id="user-name" className="my-auto">{props.user.name}<span id="user-status" className="badge badge-pill badge-danger ml-1 ml-2">ADMIN</span></h5>
             </span>
 
             <button id="log-out-btn" type="button" className="btn btn-light ml-1 log-out" onClick={() => { props.logout('log-in'); }}>
