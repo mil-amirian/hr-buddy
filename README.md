@@ -83,3 +83,11 @@ Try the application live at [https://hr-buddy.milamirian.com/](https://hr-buddy.
     ```
 
 7. Once started you can view the application by opening http://localhost:3000 in your browser.
+
+## Links & socials
+
+Portfolio: https://milamirian.com
+
+LinkedIn: https://www.linkedin.com/in/milamirian/
+
+Twitter: https://twitter.com/mamirian2
