@@ -45,7 +45,7 @@ Try the application live at [https://hr-buddy.milamirian.com/](https://hr-buddy.
 
 #### System Requirements
 
-- NPM 6 or higher
+- npm 6 or higher
 - Postgresql 10 or higher
 
 #### Getting Started
