@@ -7,7 +7,7 @@ A full stack React.js employee management web application for businesses that wa
 - React.js
 - Node
 - Express
-- Postgresql
+- PostgreSQL
 - Multer
 - HTML5
 - CSS3
@@ -73,7 +73,7 @@ Try the application live at [https://hr-buddy.milamirian.com/](https://hr-buddy.
     1. Name the cloned file to `.env`
     1. Edit the `.env` to provide your credentials
 
-5. Import the example database to Postgresql located in `database/dump.sql`.
+5. Import the example database to PostgreSQL located in `database/dump.sql`.
 
 
 6. Run the custom express server.
