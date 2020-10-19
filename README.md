@@ -42,6 +42,9 @@ Try the application live at [https://hr-buddy.milamirian.com/](https://hr-buddy.
 ![Screen Shot 2020-10-13 at 3 51 46 PM](https://user-images.githubusercontent.com/62856013/95924272-25fe8b80-0d6c-11eb-978b-884f7ba84632.png)
 ![Screen Shot 2020-10-13 at 3 52 10 PM](https://user-images.githubusercontent.com/62856013/95924275-26972200-0d6c-11eb-8d89-17f50daf2afe.png)
 ![Screen Shot 2020-10-13 at 3 52 42 PM](https://user-images.githubusercontent.com/62856013/95924277-272fb880-0d6c-11eb-9bf0-d6d4c3954617.png)
+![Screen Shot 2020-10-18 at 7 06 37 PM](https://user-images.githubusercontent.com/62856013/96393928-8418dd80-1175-11eb-89f5-9edf27a20fdd.png)
+![Screen Shot 2020-10-18 at 7 06 59 PM](https://user-images.githubusercontent.com/62856013/96393912-75cac180-1175-11eb-8243-955b21f89d06.png)
+![Screen Shot 2020-10-18 at 7 07 19 PM](https://user-images.githubusercontent.com/62856013/96393911-75cac180-1175-11eb-9b94-75e82a9bd321.png)
 
 ## Development
 
