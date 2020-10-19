@@ -20,18 +20,20 @@ Try the application live at [https://hr-buddy.milamirian.com/](https://hr-buddy.
 
 ## Features
 
+(⬅️ Features I personally worked on)
+
 - User can login to ADMIN or EMPLOYEE interface
-- ADMIN can view main menu to navigate the app
-- ADMIN can add new employee or admin account with a photo
-- ADMIN can view individual employee accounts
-- ADMIN can delete individual employee accounts
-- ADMIN can view department head-counts within each department
-- ADMIN can view total hours worked wages earned for all employees
-- ADMIN can view hours worked and wages earned for each department
-- ADMIN can view hours worked and wages earned for each employee
-- EMPLOYEE can clock-in
-- EMPLOYEE can clock-out
-- User can log-out of the app
+- ADMIN can view main menu to navigate the app (⬅️ UI components)
+- ADMIN can add new employee or admin account with a photo (⬅️ Front End)
+- ADMIN can view individual employee accounts (⬅️  Front End)
+- ADMIN can delete individual employee accounts (⬅️  Front End - state change for confirmation)
+- ADMIN can view department head-counts within each department (⬅️ UI components)
+- ADMIN can view total hours worked wages earned for all employees (⬅️ Front End)
+- ADMIN can view hours worked and wages earned for each department (⬅️ Front End)
+- ADMIN can view hours worked and wages earned for each employee (⬅️ Front End)
+- EMPLOYEE can clock-in (⬅️ UI components)
+- EMPLOYEE can clock-out (⬅️ UI components)
+- User can log-out of the app ⬅️
 
 
 
