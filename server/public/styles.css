@@ -18,12 +18,12 @@ main {
 }
 
 .navbar-header {
-    background-color: #70a2ed;
+    background-color: #8d99ae;
     height: 50px;
 }
 
 #view-emp-btn {
-    color: #70a2ed;
+    color: #8d99ae;
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
 
 }
@@ -47,7 +47,7 @@ main {
 }
 
 .log-out {
-    color: #70a2ed;
+    color: #8d99ae;
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
 }
 
@@ -76,12 +76,12 @@ main {
 }
 
 .view, .back-btn {
-    background-color: #70a2ed;
+    background-color: #8d99ae;
     border: none;
 }
 
 .table-headers {
-    background-color: #70a2ed;
+    background-color: #8d99ae;
     color: white;
 }
 
@@ -90,14 +90,14 @@ main {
     cursor: pointer;
     background-color:rgba(0,0,0,0.1);
     color: white;
-    background-color: #70a2ed;
+    background-color: #6b7484;
     transform: scale(1.02);
     box-shadow: 0 8px 6px -6px black
 
 }
 
 .menu-item {
-    background-color: #70a2ed;
+    background-color: #8d99ae;
     color: white;
     border-radius: 15px;
     padding: 2rem;
