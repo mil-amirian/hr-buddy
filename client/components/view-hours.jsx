@@ -211,16 +211,16 @@ export default class Hours extends React.Component {
           <div className="page-content col-9">
             <div className="title d-flex justify-content-around hours-title align-middle">
               <div>
-                <h2>HOURS total for all dept.</h2>
-                <span className="department-qty">
+                <h2 className="all-dept">HOURS total for all dept.</h2>
+                <span className="department-qty all-dept">
                   <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-hourglass-bottom mr-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5zm2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2h-7z"/>
                   </svg>
                   {(this.state.allHours.totalHours).toFixed(2)} Hrs for all employees</span>
               </div>
               <div>
-                <h2>PAY total for all dept.</h2>
-                <span className="department-qty">
+                <h2 className="all-dept">PAY total for all dept.</h2>
+                <span className="department-qty all-dept">
                   <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-cash-stack mr-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 3H1a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1h-1z"/>
                     <path fillRule="evenodd" d="M15 5H1v8h14V5zM1 4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H1z"/>

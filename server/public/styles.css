@@ -98,6 +98,7 @@ main {
 
 .menu-item {
     background-color: #8d99ae;
+    border: none;
     color: white;
     border-radius: 15px;
     padding: 2rem;
@@ -233,4 +234,36 @@ form {
     height: 200px;
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123);
 }
+
+@media (max-width: 1020px) {
+    .form-column-view {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .back-btn {
+        min-width: 70px;
+    }
+
+    .employee-data {
+        font-size: 14px;
+    }
+
+    #user-name {
+        font-size: 12px;
+    }
+
+   
+}
+
+@media (max-width: 1200px) {
+    .all-dept {
+        font-size: 20px;
+    }
+}
+
 

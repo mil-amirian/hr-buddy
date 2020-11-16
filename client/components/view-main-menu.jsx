@@ -14,21 +14,21 @@ export default function MainMenu(props) {
 
       <div className="container align-items-center">
         <div className="row d-flex justify-content-center">
-          <div className="menu-item col-md-5 border border-light m-4" onClick={() => { props.setView('view-employees'); }}>
+          <div className="menu-item col-md-5 m-4" onClick={() => { props.setView('view-employees'); }}>
             <i className="menu-icon fas fa-address-card fa-7x"/>
             <h2>View Employees</h2>
           </div>
-          <div className="menu-item col-md-5 border border-light m-4" onClick={() => { props.setView('view-departments'); }}>
+          <div className="menu-item col-md-5 m-4" onClick={() => { props.setView('view-departments'); }}>
             <i className="menu-icon fas fa-users fa-7x"/>
             <h2>View Departments</h2>
           </div>
         </div>
         <div className="row d-flex justify-content-center">
-          <div className="menu-item col-md-5 border border-light m-4" onClick={() => { props.setView('add-employee'); }}>
+          <div className="menu-item col-md-5 m-4" onClick={() => { props.setView('add-employee'); }}>
             <i className="menu-icon fa fa-user-plus fa-7x" />
             <h2>Add Employee</h2>
           </div>
-          <div className="menu-item col-md-5 border border-light m-4"onClick={() => { props.setView('view-hours'); }}>
+          <div className="menu-item col-md-5 m-4"onClick={() => { props.setView('view-hours'); }}>
             <i className="menu-icon fas fa-money-check-alt fa-7x"/>
             <h2>View Hours</h2>
           </div>
