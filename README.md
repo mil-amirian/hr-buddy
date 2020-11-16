@@ -1,6 +1,7 @@
 # HR BUDDY
 
 A full stack React.js employee management web application for businesses that want to automate repetitive administrative functions.
+** updated UI currently in progress - will be completed soon **
 
 ## Technologies Used
 
