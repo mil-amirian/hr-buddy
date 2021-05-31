@@ -92,8 +92,6 @@ Try the application live at [https://hr-buddy.milamirian.com/](https://hr-buddy.
 
 ## Links & socials
 
-Portfolio: https://milamirian.com
+Portfolio: https://andrewkpark.com
 
-LinkedIn: https://www.linkedin.com/in/milamirian/
-
-Twitter: https://twitter.com/mamirian2
+LinkedIn: https://www.linkedin.com/in/andrew-kyungwon-park
