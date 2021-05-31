@@ -16,7 +16,7 @@ A full stack React.js employee management web application for businesses that wa
 
 ## Live Demo
 
-Try the application live at [https://hr-buddy.andrewkpark.com/](https://hr-buddy.andrewkpark.com/)
+Try the application live at [https://hr-buddy.milamirian.com/](https://hr-buddy.milamirian.com/)
 
 ## Features
 
@@ -40,11 +40,12 @@ Try the application live at [https://hr-buddy.andrewkpark.com/](https://hr-buddy
 ## Preview
 
 ![Screen Shot 2020-10-13 at 3 51 46 PM](https://user-images.githubusercontent.com/62856013/95924272-25fe8b80-0d6c-11eb-978b-884f7ba84632.png)
-![Screen Shot 2020-10-13 at 3 52 10 PM](https://user-images.githubusercontent.com/62856013/95924275-26972200-0d6c-11eb-8d89-17f50daf2afe.png)
-![Screen Shot 2020-10-13 at 3 52 42 PM](https://user-images.githubusercontent.com/62856013/95924277-272fb880-0d6c-11eb-9bf0-d6d4c3954617.png)
-![Screen Shot 2020-10-18 at 7 06 37 PM](https://user-images.githubusercontent.com/62856013/96393928-8418dd80-1175-11eb-89f5-9edf27a20fdd.png)
-![Screen Shot 2020-10-18 at 7 06 59 PM](https://user-images.githubusercontent.com/62856013/96393912-75cac180-1175-11eb-8243-955b21f89d06.png)
-![Screen Shot 2020-10-18 at 7 07 19 PM](https://user-images.githubusercontent.com/62856013/96393911-75cac180-1175-11eb-9b94-75e82a9bd321.png)
+![Screen Shot 2020-11-16 at 11 18 17 AM](https://user-images.githubusercontent.com/62856013/99297685-7058a980-27fd-11eb-9145-2113495c7c3b.png)
+![Screen Shot 2020-11-16 at 11 18 44 AM](https://user-images.githubusercontent.com/62856013/99297721-80708900-27fd-11eb-9ab1-eac52730727e.png)
+![Screen Shot 2020-11-16 at 11 19 02 AM](https://user-images.githubusercontent.com/62856013/99297753-8a928780-27fd-11eb-9d35-a399d6394f40.png)
+![Screen Shot 2020-11-16 at 11 19 53 AM](https://user-images.githubusercontent.com/62856013/99297839-a8f88300-27fd-11eb-9c55-9311625ba763.png)
+![Screen Shot 2020-11-16 at 11 20 33 AM](https://user-images.githubusercontent.com/62856013/99297897-c0d00700-27fd-11eb-99fc-e039e5df84a8.png)
+
 
 ## Development
 
@@ -91,8 +92,6 @@ Try the application live at [https://hr-buddy.andrewkpark.com/](https://hr-buddy
 
 ## Links & socials
 
-Portfolio: https://milamirian.com
+Portfolio: https://andrewkpark.com
 
-LinkedIn: https://www.linkedin.com/in/milamirian/
-
-Twitter: https://twitter.com/mamirian2
+LinkedIn: https://www.linkedin.com/in/andrew-kyungwon-park
