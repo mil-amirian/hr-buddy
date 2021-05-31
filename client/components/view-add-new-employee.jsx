@@ -162,7 +162,6 @@ export default class AddNewEmployee extends React.Component {
       <div className="d-flex justify-content-center flex-column align-items-center">
         <div className="page-content col-10">
           <div className="shadow title d-flex justify-content-between">
-            <button className="col-1 back-btn btn btn-primary ml-3" onClick={() => { this.props.setView('main-menu'); }}>BACK</button>
             <h2 className="col-10 page-title text-center">ADD NEW EMPLOYEE</h2>
             <span className="col-1"></span>
           </div>
@@ -328,11 +327,11 @@ export default class AddNewEmployee extends React.Component {
                 <div className="row justify-content-center role-section">
                   <div className="form-check form-check-inline">
                     <input className="form-check-input" type="radio" name="inlineRadioOptions" id="admin" value="Admin" required onChange={this.handleChange}/>
-                    <label className="form-check-label" htmlFor="inlineRadio1">ADMIN</label>
+                    <label className="form-check-label" htmlFor="inlineRadio1" onChange={this.handleChange}>ADMIN</label>
                   </div>
                   <div className="form-check form-check-inline">
                     <input className="form-check-input" type="radio" name="inlineRadioOptions" id="employee" value="Employee" required onChange={this.handleChange}/>
-                    <label className="form-check-label" htmlFor="inlineRadio2">EMPLOYEE</label>
+                    <label className="form-check-label" htmlFor="inlineRadio2" onChange={this.handleChange}>EMPLOYEE</label>
                   </div>
                 </div>
                 <div className="row d-flex align-items-center justify-content-center">

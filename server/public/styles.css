@@ -6,6 +6,10 @@ main {
     margin-top: 2rem;
 }
 
+html,body {
+    height: 100%;
+}
+
 
 #home-btn {
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
@@ -18,12 +22,12 @@ main {
 }
 
 .navbar-header {
-    background-color: #70a2ed;
+    background-color: #0D3480;
     height: 50px;
 }
 
 #view-emp-btn {
-    color: #70a2ed;
+    color:  #0D3480;
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
 
 }
@@ -47,7 +51,7 @@ main {
 }
 
 .log-out {
-    color: #70a2ed;
+    color:  #0D3480;
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
 }
 
@@ -59,6 +63,7 @@ main {
 
 .spacer {
     height: 20vh;
+    background-color: #0D3480;
 }
 
 .login-btn:disabled {
@@ -76,12 +81,12 @@ main {
 }
 
 .view, .back-btn {
-    background-color: #70a2ed;
+    background-color: #0D3480;
     border: none;
 }
 
 .table-headers {
-    background-color: #70a2ed;
+    background-color: #0D3480;
     color: white;
 }
 
@@ -90,14 +95,14 @@ main {
     cursor: pointer;
     background-color:rgba(0,0,0,0.1);
     color: white;
-    background-color: #70a2ed;
+    background-color: #0D3480;
     transform: scale(1.02);
     box-shadow: 0 8px 6px -6px black
 
 }
 
 .menu-item {
-    background-color: #70a2ed;
+    background-color: #0D3480;
     color: white;
     border-radius: 15px;
     padding: 2rem;
@@ -178,12 +183,12 @@ form {
     border-radius: 15px;
     width: 20vw;
     box-shadow: 0 8px 6px -6px black
-} 
+}
 
-.bubble { 
+.bubble {
     background-color: #EBECF0;
     border-radius: 15px;
-    padding: 2rem; 
+    padding: 2rem;
      margin: 1rem;
      box-shadow: 0 8px 6px -6px rgb(123, 123, 123);
      width: 200px;
@@ -233,4 +238,3 @@ form {
     height: 200px;
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123);
 }
-
