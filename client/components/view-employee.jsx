@@ -53,7 +53,7 @@ export default class ViewEmployee extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-12 d-flex">
+            <div className="col-12 d-flex form-column-view">
               <div className="col d-flex mt-3 section-styling">
                 <div className="col-12 d-flex flex-column align-items-left">
                   <h5 className="row ml-1 mt-1">CONTACT DETAILS</h5>
