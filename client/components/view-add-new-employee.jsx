@@ -160,8 +160,8 @@ export default class AddNewEmployee extends React.Component {
   render() {
     return (
       <div className="d-flex justify-content-center flex-column align-items-center">
-        <button className="col-1 back-btn btn btn-primary ml-3" onClick={() => { this.props.setView('main-menu'); }}>BACK</button>
         <div className="col-10 no-padding">
+          <button className="col-1 back-btn btn btn-primary mt-3" onClick={() => { this.props.setView('main-menu'); }}>BACK</button>
           <div className="shadow title d-flex justify-content-center">
             <h2 className="col-10 page-title text-center justify-content-center align-items-center">ADD NEW EMPLOYEE</h2>
           </div>

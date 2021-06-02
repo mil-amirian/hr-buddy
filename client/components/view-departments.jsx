@@ -29,8 +29,9 @@ export default class ViewDepartments extends React.Component {
         <>
           <main className="d-flex justify-content-center mb-4">
             <div className="page-content col-10">
+              <button className="col-1 back-btn btn btn-primary mt-3" onClick={() => { this.props.setView('main-menu'); }}>BACK</button>
               <div className="shadow title d-flex justify-content-center">
-                <h2 className="page-title align-items-center">VIEW DEPARTMENTS</h2>
+                <h2 className="page-title align-items-center">DEPARTMENTS</h2>
                 <span className="col-1"></span>
 
               </div>
@@ -45,7 +46,7 @@ export default class ViewDepartments extends React.Component {
                       <div key={department.departmentId} className='department-box m-1'>
                         <div className="">
                           <div className="bubble">
-                            <h4> {department.department} Department</h4>
+                            <h4> {department.department} </h4>
                             <h1 className="mb-1 dep-qty">{department.numbersOfPeople}</h1>
                             <h3>Member(s)</h3>
                           </div>

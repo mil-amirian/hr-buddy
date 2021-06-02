@@ -100,7 +100,7 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <Hours getCurrentUser={this.getCurrentUser} />
+            <Hours getCurrentUser={this.getCurrentUser} setView={this.setView}/>
           </>
         );
       case 'view-departments':
