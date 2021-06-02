@@ -30,7 +30,7 @@ export default function MainMenu(props) {
           </div>
           <div className="menu-item col-md-5 m-4"onClick={() => { props.setView('view-hours'); }}>
             <i className="menu-icon fas fa-money-check-alt fa-7x"/>
-            <h2>View Hours</h2>
+            <h2>View Payroll</h2>
           </div>
         </div>
       </div>

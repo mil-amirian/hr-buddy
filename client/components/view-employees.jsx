@@ -47,8 +47,9 @@ export default class ViewEmployees extends React.Component {
         return (
           <main className="d-flex justify-content-center mb-4">
             <div className="page-content col-10">
+              <button className="col-1 back-btn btn btn-primary ml-3" onClick={() => { this.props.setView('main-menu'); }}>BACK</button>
               <div className="shadow title d-flex justify-content-center">
-                <h2 className="page-title">VIEW EMPLOYEES</h2>
+                <h2 className="page-title">EMPLOYEES</h2>
               </div>
               <div className="table-container">
                 <div className="add-button-container d-flex justify-content-end mb-4 mt-4">
