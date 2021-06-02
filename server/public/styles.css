@@ -197,7 +197,6 @@ form {
 
 .shadow {
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123);
-
 }
 
 .menu-spacer {
@@ -237,4 +236,9 @@ form {
     width: 400px;
     height: 200px;
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123);
+}
+
+.no-padding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
