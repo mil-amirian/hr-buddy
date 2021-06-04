@@ -84,7 +84,7 @@ export default class Hours extends React.Component {
   departmentSection() {
     if (this.state.selectedDepartment) {
       return (
-        <div className="hours-container d-flex flex-column justify-content-around mt-5">
+        <div className="hours-container shadow d-flex flex-column justify-content-around mt-5">
           <div>
             <h5>HOURS total for TEAM</h5>
             <span className="department-qty">
@@ -115,7 +115,7 @@ export default class Hours extends React.Component {
       );
     } else {
       return (
-        <div className="hours-container d-flex flex-column justify-content-around mt-5">
+        <div className="hours-container shadow d-flex flex-column justify-content-around mt-5">
           <div>
             <h5>HOURS total for TEAM</h5>
             <span>-- Select a department from above to view --</span>
@@ -136,7 +136,7 @@ export default class Hours extends React.Component {
   employeeSection() {
     if (this.state.selectedEmployee) {
       return (
-        <div className="hours-container d-flex flex-column justify-content-around mt-5">
+        <div className="hours-container shadow d-flex flex-column justify-content-around mt-5">
           <div>
             <h5>HOURS total for EMPLOYEE</h5>
             <span className="department-qty">
@@ -177,7 +177,7 @@ export default class Hours extends React.Component {
       );
     } else {
       return (
-        <div className="hours-container d-flex flex-column justify-content-around mt-5">
+        <div className="hours-container shadow d-flex flex-column justify-content-around mt-5">
           <div>
             <h5>HOURS total for EMPLOYEE</h5>
             <span>-- Select an employee from above to view --</span>
@@ -211,7 +211,7 @@ export default class Hours extends React.Component {
               </div>
             </div>
             <div className="page-content col-10 no-padding">
-              <div className="title d-flex justify-content-around hours-title align-middle">
+              <div className="title shadow d-flex justify-content-around hours-title align-middle">
                 <div>
                   <h2>HOURS total for all dept.</h2>
                   <span className="department-qty">

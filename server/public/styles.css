@@ -95,6 +95,10 @@ html,body {
     background-color: #EBECF0;
 }
 
+.members-title {
+    border-bottom: 1px solid black;
+}
+
 .view, .back-btn {
     background-color: #0D3480;
     border: none;
