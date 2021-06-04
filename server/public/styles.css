@@ -147,7 +147,6 @@ form {
 
 .section-styling {
     border-radius: 15px;
-    margin: 0 10px;
     padding: 10px;
     background-color: #F8F9FA;
 }
@@ -178,7 +177,7 @@ form {
 
 .employee-image {
     border-radius: 15px;
-    width: 20vw;
+    width: 100%;
     height: auto;
     box-shadow: 0 8px 6px -6px black
 }

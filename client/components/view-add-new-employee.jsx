@@ -169,23 +169,23 @@ export default class AddNewEmployee extends React.Component {
         <form className="col-10 shadow d-flex flex-column align-items-center" onSubmit={this.handleSubmit}>
           <div className="col-10  d-flex flex-column align-items-left section-styling-head">
             <h5 className="row ml-3 mt-1">NAME & JOB TITLE</h5>
-            <div className="col-10  form-group d-flex justify-content-between ml-1">
-              <div className="col-4">
+            <div className="col-10  form-group d-flex justify-content-center">
+              <div className="col-4 align-items-center">
                 <label htmlFor="exampleFormControlInput1">First Name</label>
                 <input type="text" className="form-control" id="firstName" placeholder="First Name" onChange={this.handleChange} required/>
               </div>
-              <div className="col-4">
+              <div className="col-4 align-items-center">
                 <label htmlFor="exampleFormControlInput1">Last Name</label>
                 <input type="text" className="form-control" id="lastName" placeholder="Last Name" onChange={this.handleChange} required/>
               </div>
-              <div className="col-4">
+              <div className="col-4 align-items-center">
                 <label htmlFor="exampleFormControlInput1">Job Title</label>
                 <input type="text" className="form-control" id="jobTitle" placeholder="Job Title" onChange={this.handleChange} required/>
               </div>
             </div>
           </div>
           <div className="col-10 d-flex justify-content-between no-padding">
-            <div className="col-3 d-flex mt-3 section-styling">
+            <div className="col-3 d-flex mt-3 section-styling align-items-center justify-content-center">
               <div className="col-10  d-flex flex-column">
                 <h5 className="row ml-1 mt-1">CONTACT DETAILS</h5>
                 <div className="form-group d-flex flex-column justify-content-between ml-1">
@@ -269,7 +269,7 @@ export default class AddNewEmployee extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-3 d-flex mt-3 section-styling">
+            <div className="col-3 d-flex mt-3 section-styling align-items-center justify-content-center">
               <div className="col-10  d-flex flex-column align-items-left">
                 <h5 className="row ml-1 mt-1">JOB DETAILS</h5>
                 <div className="form-group d-flex flex-column justify-content-between ml-1">
@@ -312,7 +312,7 @@ export default class AddNewEmployee extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-3 d-flex mt-3 section-styling">
+            <div className="col-3 d-flex mt-3 section-styling align-items-center justify-content-center">
               <div className="col-10 d-flex flex-column align-items-left justify-content-between">
                 <h5 className="ml-1 mt-1">EMPLOYEE PHOTO & ROLE</h5>
                 <div className="row form-group d-flex flex-column align-items-center">
