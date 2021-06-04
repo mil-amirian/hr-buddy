@@ -62,8 +62,23 @@ html,body {
 }
 
 .spacer {
-    height: 20vh;
-    background-color: #0D3480;
+    height: 40vh;
+}
+
+.home-page-container {
+    height: 60vh;
+}
+
+.home-page-container::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(./images/hr-buddy-front-page.jpg);
+    background-size: cover;
+    opacity: 0.3;
 }
 
 .login-btn:disabled {
@@ -98,7 +113,6 @@ html,body {
     background-color: #0D3480;
     transform: scale(1.02);
     box-shadow: 0 8px 6px -6px black
-
 }
 
 .menu-item {
@@ -195,18 +209,22 @@ form {
      height: 225px;
 }
 
-.shadow {
+.box-shadow {
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123);
 }
 
 .menu-spacer {
     height: 15vh;
-
 }
 
 
 .department-qty {
     font-size: 30px;
+}
+
+.department-box:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .dep-qty {

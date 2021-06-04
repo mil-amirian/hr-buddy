@@ -57,34 +57,33 @@ class LogIn extends React.Component {
   render() {
     return (
       <>
-        <div className="spacer"></div>
-        <div className="container-fluid h-100">
-          <div className="row">
-            <div className="d-flex flex-column justify-content-lg-center align-items-lg-center col-6 mt-5">
-              <img className="d-flex justify content-lg-center align-items-center" src="./images/hr-buddy-front-page.jpg"></img>
-            </div>
-            <div className="d-flex justify-content-lg-center align-items-lg-center flex-column col-6">
-              <img className="d-flex justify-content-lg-center align-items-center" src="./images/hr-buddy-logo.png"></img>
-              <div className="row justify-content-lg-center align-items-center mt-5 mx-auto">
-                <h2>Login to your account</h2>
-                <div className="input-group mt-4">
-                  <div className="input-group-prepend">
-                    <label className="input-group-text" htmlFor="employee-select">Select User</label>
-                  </div>
-                  <select className="custom-select" id="employee-select" onChange={this.handleChange}>
-                    <option value="default">--select--</option>
-                    {this.state.employees.map(employee => {
-                      if (employee.firstName === 'Ron' || employee.firstName === 'Roseanne') {
-                        return (
-                          <option key={employee.employeeId}>{employee.firstName} {employee.lastName}</option>
-                        );
+        <div className="container-fluid">
+          <div className="spacer"></div>
+          <div className="home-page-container">
+            <div className="row">
+              <div className="d-flex justify-content-lg-center align-items-lg-center flex-column col-12">
+                <img className="d-flex justify-content-lg-center align-items-center" src="./images/hr-buddy-logo.png"></img>
+                <div className="row justify-content-lg-center align-items-center mt-5 mx-auto">
+                  <h2>Login to your account</h2>
+                  <div className="input-group mt-4">
+                    <div className="input-group-prepend">
+                      <label className="input-group-text" htmlFor="employee-select">Select User</label>
+                    </div>
+                    <select className="custom-select" id="employee-select" onChange={this.handleChange}>
+                      <option value="default">--select--</option>
+                      {this.state.employees.map(employee => {
+                        if (employee.firstName === 'Ron' || employee.firstName === 'Roseanne') {
+                          return (
+                            <option key={employee.employeeId}>{employee.firstName} {employee.lastName}</option>
+                          );
+                        }
+                      })
                       }
-                    })
-                    }
-                  </select>
-                </div>
-                <div className="d-flex flex-column justify-content-center mt-4">
-                  <button type="button" className="btn btn-primary view login-btn" disabled={!this.state.currentUser.name} onClick={() => { this.currentUser(this.state.currentUser); }} >Login Now</button>
+                    </select>
+                  </div>
+                  <div className="d-flex flex-column justify-content-center mt-4">
+                    <button type="button" className="btn btn-primary view login-btn" disabled={!this.state.currentUser.name} onClick={() => { this.currentUser(this.state.currentUser); }} >Login Now</button>
+                  </div>
                 </div>
               </div>
             </div>
