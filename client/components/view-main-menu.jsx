@@ -6,7 +6,7 @@ export default function MainMenu(props) {
       {/* <div className="menu-spacer"></div> */}
       <div className="d-flex align-items-center justify-content-center mb-4">
         <div className="page-content col-10">
-          <div className="shadow title d-flex justify-content-center">
+          <div className="box-shadow title d-flex justify-content-center">
             <h2 className="page-title">{'MAIN MENU'}</h2>
           </div>
         </div>
