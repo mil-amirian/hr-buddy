@@ -8,7 +8,6 @@ export default class EachEmployee extends React.Component {
     };
     this.actionViewButton = this.actionViewButton.bind(this);
     this.deleteButton = this.deleteButton.bind(this);
-
   }
 
   actionViewButton(props) {

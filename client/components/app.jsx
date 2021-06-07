@@ -107,7 +107,7 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <ViewDepartments setView={this.setView} show={this.state.show}/>
+            <ViewDepartments getCurrentUser={this.getCurrentUser} setView={this.setView} selectedUser={this.state.employeeToView}/>
           </>
         );
     }
