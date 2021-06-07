@@ -166,21 +166,31 @@ export default class AddNewEmployee extends React.Component {
             <h2 className="col-10 page-title text-center justify-content-center align-items-center">ADD NEW EMPLOYEE</h2>
           </div>
         </div>
+        <div className="justify-content-center align-items-center role-section">
+          <div className="form-check form-check-inline">
+            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="admin" value="Admin" required onChange={this.handleChange} />
+            <label className="form-check-label" htmlFor="admin" onChange={this.handleChange}>ADMIN</label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="employee" value="Employee" required onChange={this.handleChange} />
+            <label className="form-check-label" htmlFor="employee" onChange={this.handleChange}>EMPLOYEE</label>
+          </div>
+        </div>
         <form className="col-10 shadow d-flex flex-column align-items-center" onSubmit={this.handleSubmit}>
           <div className="col-10  d-flex flex-column align-items-left section-styling-head">
             <h5 className="row ml-3 mt-1">NAME & JOB TITLE</h5>
             <div className="col-10  form-group d-flex justify-content-center">
               <div className="col-4 align-items-center">
                 <label htmlFor="exampleFormControlInput1">First Name</label>
-                <input type="text" className="form-control" id="firstName" placeholder="First Name" onChange={this.handleChange} required/>
+                <input type="text" className="form-control" id="firstName" placeholder="First Name" onChange={this.handleChange} required />
               </div>
               <div className="col-4 align-items-center">
                 <label htmlFor="exampleFormControlInput1">Last Name</label>
-                <input type="text" className="form-control" id="lastName" placeholder="Last Name" onChange={this.handleChange} required/>
+                <input type="text" className="form-control" id="lastName" placeholder="Last Name" onChange={this.handleChange} required />
               </div>
               <div className="col-4 align-items-center">
                 <label htmlFor="exampleFormControlInput1">Job Title</label>
-                <input type="text" className="form-control" id="jobTitle" placeholder="Job Title" onChange={this.handleChange} required/>
+                <input type="text" className="form-control" id="jobTitle" placeholder="Job Title" onChange={this.handleChange} required />
               </div>
             </div>
           </div>
@@ -191,11 +201,11 @@ export default class AddNewEmployee extends React.Component {
                 <div className="form-group d-flex flex-column justify-content-between ml-1">
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">Street</label>
-                    <input type="text" className="form-control" id="street" placeholder="Street address" onChange={this.handleChange} required/>
+                    <input type="text" className="form-control" id="street" placeholder="Street address" onChange={this.handleChange} required />
                   </div>
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">City</label>
-                    <input type="text" className="form-control" id="city" placeholder="City" onChange={this.handleChange} required/>
+                    <input type="text" className="form-control" id="city" placeholder="City" onChange={this.handleChange} required />
                   </div>
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">State</label>
@@ -256,15 +266,15 @@ export default class AddNewEmployee extends React.Component {
                   </div>
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">Zip Code</label>
-                    <input type="text" className="form-control" id="zip" placeholder="Zip Code" onChange={this.handleChange}/>
+                    <input type="text" className="form-control" id="zip" placeholder="Zip Code" onChange={this.handleChange} />
                   </div>
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">Email</label>
-                    <input type="text" className="form-control" id="email" placeholder="name@company.com" onChange={this.handleChange}/>
+                    <input type="text" className="form-control" id="email" placeholder="name@company.com" onChange={this.handleChange} />
                   </div>
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">Phone</label>
-                    <input type="phone" className="form-control" id="phone" placeholder="Phone Number" onChange={this.handleChange}/>
+                    <input type="phone" className="form-control" id="phone" placeholder="Phone Number" onChange={this.handleChange} />
                   </div>
                 </div>
               </div>
@@ -275,7 +285,7 @@ export default class AddNewEmployee extends React.Component {
                 <div className="form-group d-flex flex-column justify-content-between ml-1">
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">Wage</label>
-                    <input type="text" className="form-control" id="wage" placeholder="Wages per hour" onChange={this.handleChange}/>
+                    <input type="text" className="form-control" id="wage" placeholder="Wages per hour" onChange={this.handleChange} />
                   </div>
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">Department</label>
@@ -299,49 +309,37 @@ export default class AddNewEmployee extends React.Component {
                   </div>
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">Start Date</label>
-                    <input type="date" className="form-control" id="startDate" placeholder="Employee Start Date" onChange={this.handleChange} required/>
+                    <input type="date" className="form-control" id="startDate" placeholder="Employee Start Date" onChange={this.handleChange} required />
                   </div>
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">Induction Date</label>
-                    <input type="date" className="form-control" id="inductionDate" placeholder="Employee Induction Date" onChange={this.handleChange} required/>
+                    <input type="date" className="form-control" id="inductionDate" placeholder="Employee Induction Date" onChange={this.handleChange} required />
                   </div>
                   <div className="mt-2">
                     <label htmlFor="exampleFormControlInput1">Qualifications</label>
-                    <textarea type="text" className="form-control" id="qualifications" placeholder="list all qualifications separated by a comma" onChange={this.handleChange} required/>
+                    <textarea type="text" className="form-control" id="qualifications" placeholder="list all qualifications separated by a comma" onChange={this.handleChange} required />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-3 d-flex mt-3 section-styling align-items-center justify-content-center">
-              <div className="col-10 d-flex flex-column align-items-left justify-content-between">
-                <h5 className="ml-1 mt-1">EMPLOYEE PHOTO & ROLE</h5>
-                <div className="row form-group d-flex flex-column align-items-center">
-                  <div className="d-flex justify-content-center">
-                    {this.renderImage(this.state.photo.preview)}
-                  </div>
-                  <div className="custom-file">
-                    <input type="file" className="custom-file-input" id="customFile" name="avatar" accept="image/*" onChange={this.handlePhotoChange}/>
-                    <label className="custom-file-label" htmlFor="customFile">Choose file</label>
-                  </div>
+            <div className="col-3 d-flex mt-3 flex-column section-styling align-items-center justify-content-between">
+              <h5 className="ml-1 mt-1">EMPLOYEE PHOTO & ROLE</h5>
+              <div className="row form-group d-flex flex-column align-items-center">
+                <div className="d-flex justify-content-center">
+                  {this.renderImage(this.state.photo.preview)}
                 </div>
-                <div className="row justify-content-center role-section">
-                  <div className="form-check form-check-inline">
-                    <input className="form-check-input" type="radio" name="inlineRadioOptions" id="admin" value="Admin" required onChange={this.handleChange}/>
-                    <label className="form-check-label" htmlFor="inlineRadio1" onChange={this.handleChange}>ADMIN</label>
-                  </div>
-                  <div className="form-check form-check-inline">
-                    <input className="form-check-input" type="radio" name="inlineRadioOptions" id="employee" value="Employee" required onChange={this.handleChange}/>
-                    <label className="form-check-label" htmlFor="inlineRadio2" onChange={this.handleChange}>EMPLOYEE</label>
-                  </div>
-                </div>
-                <div className="row d-flex align-items-center justify-content-center">
-                  <button type="reset" className="btn btn-danger m-1" onClick={() => { this.props.setView('main-menu'); }}>CANCEL</button>
-                  <button type="submit" className="btn btn-success m-1">ADD EMPLOYEE</button>
+                <div className="custom-file">
+                  <input type="file" className="custom-file-input" id="customFile" name="avatar" accept="image/*" onChange={this.handlePhotoChange} />
+                  <label className="custom-file-label" htmlFor="customFile">Choose file</label>
                 </div>
               </div>
             </div>
           </div>
         </form>
+        <div className="row d-flex align-items-center justify-content-center">
+          <button type="reset" className="btn btn-danger m-1" onClick={() => { this.props.setView('main-menu'); }}>CANCEL</button>
+          <button type="submit" className="btn btn-success m-1">ADD EMPLOYEE</button>
+        </div>
       </div>
 
     );

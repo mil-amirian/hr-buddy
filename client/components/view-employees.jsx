@@ -67,6 +67,7 @@ export default class ViewEmployees extends React.Component {
                       <th scope="col">First Name</th>
                       <th scope="col">Last Name</th>
                       <th scope="col">Job Title</th>
+                      <th scope="col">Department</th>
                       <th scope="col">Actions</th>
                     </tr>
                   </thead>
@@ -74,7 +75,7 @@ export default class ViewEmployees extends React.Component {
                     {
                       this.state.employees.map(employee => {
                         return (
-                          <EachEmployee firstName={employee.firstName} lastName={employee.lastName} employeeId={employee.employeeId} jobTitle={employee.jobTitle} key={employee.employeeId} selectedUser={() => { this.props.selectedUser(employee.employeeId); }} setView={this.props.setView} deleteEmployee={this.deleteEmployee}/>
+                          <EachEmployee firstName={employee.firstName} lastName={employee.lastName} employeeId={employee.employeeId} department={employee.department} jobTitle={employee.jobTitle} key={employee.employeeId} selectedUser={() => { this.props.selectedUser(employee.employeeId); }} setView={this.props.setView} deleteEmployee={this.deleteEmployee}/>
                         );
                       })
                     }

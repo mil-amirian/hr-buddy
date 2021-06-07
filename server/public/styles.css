@@ -137,12 +137,16 @@ html,body {
 
 }
 
-.table-container{
-    background-color:white;
-}
-
 .menu-icon {
     color: white;
+}
+
+.modal-page {
+    background-color: white;
+}
+
+.modal-table {
+    padding-bottom: 2rem;
 }
 
 .clock-in-button,
@@ -171,10 +175,9 @@ form {
 
 .role-section {
     font-weight: 600;
+    font-size: 1.5rem;
     color: black;
-    border-radius: 15px;
-    height: 75px;
-    background-color: #EBECF0;
+    padding-top: 2rem;
 }
 
 .employee-data {
