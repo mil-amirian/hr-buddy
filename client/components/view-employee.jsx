@@ -60,13 +60,13 @@ export default class ViewEmployee extends React.Component {
                     </div>
                     <div className="mt-2">
                       <label htmlFor="exampleFormControlInput1">Email</label>
-                      <p className="employee-data">{this.state.employee.email}</p>
-
+                      <p id="email" className="employee-data">{this.state.employee.email}</p>
+                      <button className="btn btn-success" onClick={e => { navigator.clipboard.writeText(this.state.employee.email); e.preventDefault(); window.alert('Copied to clipboard!'); }}>Copy</button>
                     </div>
                     <div className="mt-2">
                       <label htmlFor="exampleFormControlInput1">Phone</label>
                       <p className="employee-data">{this.state.employee.phone}</p>
-
+                      <button className="btn btn-success" onClick={e => { navigator.clipboard.writeText(this.state.employee.phone); e.preventDefault(); window.alert('Copied to clipboard!'); }}>Copy</button>
                     </div>
                   </div>
                 </div>
