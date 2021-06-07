@@ -95,6 +95,14 @@ html,body {
     background-color: #EBECF0;
 }
 
+.title-modal {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    height: 75px;
+    background-color: #EBECF0;
+}
+
 .members-title {
     border-bottom: 1px solid black;
 }
@@ -127,6 +135,10 @@ html,body {
     transition: 0.2s;
     box-shadow: 0 8px 6px -6px rgb(123, 123, 123)
 
+}
+
+.table-container{
+    background-color:white;
 }
 
 .menu-icon {
