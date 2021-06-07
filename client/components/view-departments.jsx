@@ -9,7 +9,10 @@ export default class ViewDepartments extends React.Component {
       departments: null,
       employees: null,
       selectedDept: null,
-      show: true
+      show: true,
+      open: true,
+      viewEmployee: true,
+      confirm: false
     };
     this.getDepartments = this.getDepartments.bind(this);
     this.getEmployees = this.getEmployees.bind(this);
@@ -44,10 +47,9 @@ export default class ViewDepartments extends React.Component {
 
   showModal(e) {
     this.setState({
-      show: !this.state.show
+      show: !this.state.show,
+      open: !this.state.open
     });
-    // eslint-disable-next-line no-console
-    // console.log(e.target.value);
   }
 
   render() {
