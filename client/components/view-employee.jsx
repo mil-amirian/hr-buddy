@@ -29,29 +29,10 @@ export default class ViewEmployee extends React.Component {
           <div className="col-10 no-padding">
             <button className="col-1 back-btn btn btn-primary mt-3" onClick={() => { this.props.setView('view-employees'); }}>BACK</button>
             <div className="shadow title d-flex justify-content-center">
-              <h2 className="col-10 page-title text-center justify-content-center align-items-center">{this.state.employee.firstName} {this.state.employee.lastName}</h2>
+              <h2 className="col-10 page-title text-center justify-content-center align-items-center"><b>{this.state.employee.firstName} {this.state.employee.lastName} - {this.state.employee.jobTitle}</b></h2>
             </div>
           </div>
           <form className="col-10 shadow d-flex flex-column align-items-center" onSubmit={this.handleSubmit}>
-            <div className="col-10 d-flex flex-column align-items-left section-styling-head">
-              <h5 className="row ml-3 mt-1">NAME & JOB TITLE</h5>
-              <div className="form-group d-flex justify-content-center">
-                <div className="col-4 align-items-center">
-                  <label htmlFor="exampleFormControlInput1">First Name</label>
-                  <p className="employee-data">{this.state.employee.firstName}</p>
-                </div>
-                <div className="col-4 align-items-center">
-                  <label htmlFor="exampleFormControlInput1">Last Name</label>
-                  <p className="employee-data">{this.state.employee.lastName}</p>
-
-                </div>
-                <div className="col-4 align-items-center">
-                  <label htmlFor="exampleFormControlInput1">Job Title</label>
-                  <p className="employee-data">{this.state.employee.jobTitle}</p>
-
-                </div>
-              </div>
-            </div>
             <div className="col-10 d-flex justify-content-between no-padding">
               <div className="col-3 d-flex mt-3 section-styling align-items-center justify-content-center">
                 <div className="col-10 d-flex flex-column">
@@ -96,7 +77,7 @@ export default class ViewEmployee extends React.Component {
                   <div className="form-group d-flex flex-column justify-content-between ml-1">
                     <div className="mt-2">
                       <label htmlFor="exampleFormControlInput1">Wage</label>
-                      <p className="employee-data">${this.state.employee.wage} p/h</p>
+                      <p className="employee-data">${this.state.employee.wage}/hr</p>
 
                     </div>
                     <div className="mt-2">
@@ -131,19 +112,13 @@ export default class ViewEmployee extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="col-3 d-flex mt-3 section-styling align-items-center justify-content-center">
-                <div className="col-10 d-flex flex-column align-items-left justify-content-between">
-                  <h5 className="ml-1 mt-1">EMPLOYEE PHOTO & ROLE</h5>
-                  <div className="form-group d-flex flex-column align-items-center">
-                    <div className="row image-bkg">
-                      <img className="employee-image" src={this.state.employee.image} alt={this.state.employee.image}/>
-                    </div>
-                  </div>
-                  <div className="row justify-content-center role-section">
-                    <div className="form-check form-check-inline">
-                      <span className="employee-data-role">{this.state.employee.role}</span>
-                    </div>
-                  </div>
+              <div className="col-3 d-flex mt-3 flex-column section-styling align-items-center justify-content-between">
+                <h5 className="ml-1 mt-1">EMPLOYEE PHOTO & ROLE</h5>
+                <div className="form-group d-flex flex-column align-items-center">
+                  <img className="employee-image" src={this.state.employee.image} alt={this.state.employee.image} />
+                </div>
+                <div className="row justify-content-center role-section">
+                  <span className="employee-data-role">{this.state.employee.role}</span>
                 </div>
               </div>
             </div>

@@ -126,8 +126,8 @@ export default class ViewDepartments extends React.Component {
             </div>
           </div>
           <DeptModal onClose={this.showModal} show={this.state.show}>
-            <main className="d-flex justify-content-center mb-4">
-              <div className="page-content col-10">
+            <main className="d-flex justify-content-center mb-4 modal-page">
+              <div className="page-content col-10 modal-table">
                 <div className="shadow title-modal d-flex justify-content-center">
                   <h2 className="page-title">EMPLOYEES</h2>
                 </div>
